@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Module/Login/LoginViewController.swift"
+            timestampString = "585108785.2190011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySocialApp.LoginViewController.login() -&gt; ()"
+                  moduleName = "MySocialApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lujian/Documents/develop/%E7%A4%BE%E4%BA%A4iOS/MySocialApp/Module/Login/LoginViewController.swift"
+                  timestampString = "584439886.285118"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1046">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (LeanCloud.LCValueResult&lt;LeanCloud.LCUser&gt;) -&gt; () in MySocialApp.LoginViewController.login() -&gt; ()"
+                  moduleName = "MySocialApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lujian/Documents/develop/%E7%A4%BE%E4%BA%A4iOS/MySocialApp/Module/Login/LoginViewController.swift"
+                  timestampString = "584439886.288254"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "90">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Module/Login/LoginViewController.swift"
+            timestampString = "585108785.226066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

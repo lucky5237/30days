@@ -1,0 +1,314 @@
+PODS:
+  - Alamofire (5.2.2)
+  - AliyunOSSiOS (2.10.8)
+  - BaiduMapKit (6.0.0):
+    - BaiduMapKit/Base (= 6.0.0)
+    - BaiduMapKit/Cloud (= 6.0.0)
+    - BaiduMapKit/Map (= 6.0.0)
+    - BaiduMapKit/Search (= 6.0.0)
+    - BaiduMapKit/Utils (= 6.0.0)
+  - BaiduMapKit/Base (6.0.0)
+  - BaiduMapKit/Cloud (6.0.0):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Map (6.0.0):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Search (6.0.0):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Utils (6.0.0):
+    - BaiduMapKit/Base
+  - BMKLocationKit (1.8.5)
+  - CHIPageControl (0.2):
+    - CHIPageControl/Aji (= 0.2)
+    - CHIPageControl/Aleppo (= 0.2)
+    - CHIPageControl/Chimayo (= 0.2)
+    - CHIPageControl/Fresno (= 0.2)
+    - CHIPageControl/Jalapeno (= 0.2)
+    - CHIPageControl/Jaloro (= 0.2)
+    - CHIPageControl/Paprika (= 0.2)
+    - CHIPageControl/Puya (= 0.2)
+  - CHIPageControl/Aji (0.2)
+  - CHIPageControl/Aleppo (0.2)
+  - CHIPageControl/Chimayo (0.2)
+  - CHIPageControl/Fresno (0.2)
+  - CHIPageControl/Jalapeno (0.2)
+  - CHIPageControl/Jaloro (0.2)
+  - CHIPageControl/Paprika (0.2)
+  - CHIPageControl/Puya (0.2)
+  - Differentiator (4.0.1)
+  - ESTabBarController-swift (2.8.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - FSPagerView (0.8.3)
+  - HandyJSON (5.0.2)
+  - Hero (1.5.0)
+  - JCore (2.3.6)
+  - JMessage (3.9.1):
+    - JCore (< 3.0.0, >= 2.0.0)
+  - Kingfisher (5.15.4):
+    - Kingfisher/Core (= 5.15.4)
+  - Kingfisher/Core (5.15.4)
+  - Koloda (5.0.1):
+    - pop (~> 1.0)
+  - Masonry (1.1.0)
+  - Material (3.1.8):
+    - Material/Core (= 3.1.8)
+  - Material/Core (3.1.8):
+    - Motion (~> 3.1.1)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.5.0)
+  - mob_smssdk (3.2.10):
+    - MOBFoundation
+  - MOBFoundation (3.2.19)
+  - Motion (3.1.3):
+    - Motion/Core (= 3.1.3)
+  - Motion/Core (3.1.3)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - Parchment (2.4.0)
+  - pop (1.0.12)
+  - PryntTrimmerView (4.0.2)
+  - QuickLayout (3.0.0)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+  - RTRootNavigationController (0.7.2):
+    - RTRootNavigationController/Core (= 0.7.2)
+  - RTRootNavigationController/Core (0.7.2)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SkeletonView (1.9)
+  - SKPhotoBrowser (6.1.0)
+  - SnapKit (5.0.1)
+  - Spring (1.0.6)
+  - SteviaLayout (4.7.3)
+  - SVProgressHUD (2.2.5)
+  - SwiftDate (6.2.0)
+  - SwiftEntryKit (1.2.6):
+    - QuickLayout (= 3.0.0)
+  - SwifterSwift (5.2.0):
+    - SwifterSwift/AppKit (= 5.2.0)
+    - SwifterSwift/CoreAnimation (= 5.2.0)
+    - SwifterSwift/CoreGraphics (= 5.2.0)
+    - SwifterSwift/CoreLocation (= 5.2.0)
+    - SwifterSwift/Dispatch (= 5.2.0)
+    - SwifterSwift/Foundation (= 5.2.0)
+    - SwifterSwift/MapKit (= 5.2.0)
+    - SwifterSwift/SceneKit (= 5.2.0)
+    - SwifterSwift/SpriteKit (= 5.2.0)
+    - SwifterSwift/StoreKit (= 5.2.0)
+    - SwifterSwift/SwiftStdlib (= 5.2.0)
+    - SwifterSwift/UIKit (= 5.2.0)
+  - SwifterSwift/AppKit (5.2.0)
+  - SwifterSwift/CoreAnimation (5.2.0)
+  - SwifterSwift/CoreGraphics (5.2.0)
+  - SwifterSwift/CoreLocation (5.2.0)
+  - SwifterSwift/Dispatch (5.2.0)
+  - SwifterSwift/Foundation (5.2.0)
+  - SwifterSwift/MapKit (5.2.0)
+  - SwifterSwift/SceneKit (5.2.0)
+  - SwifterSwift/SpriteKit (5.2.0)
+  - SwifterSwift/StoreKit (5.2.0)
+  - SwifterSwift/SwiftStdlib (5.2.0)
+  - SwifterSwift/UIKit (5.2.0)
+  - SwiftyStoreKit (0.16.1)
+  - SwiftyUserDefaults (5.0.0)
+  - TagListView (1.4.1)
+  - Then (2.7.0)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
+  - UMCCommon (7.1.3)
+  - YHPhotoKit (0.2.1)
+  - YHPopupView (0.3.0)
+  - YPImagePicker (4.4.0):
+    - PryntTrimmerView (~> 4.0.2)
+    - SteviaLayout (~> 4.7.3)
+
+DEPENDENCIES:
+  - AliyunOSSiOS
+  - BaiduMapKit
+  - BMKLocationKit
+  - CHIPageControl
+  - ESTabBarController-swift
+  - FMDB
+  - FSPagerView
+  - HandyJSON
+  - Hero
+  - JMessage
+  - Kingfisher
+  - Koloda
+  - Masonry
+  - Material
+  - MBProgressHUD
+  - MJRefresh
+  - mob_smssdk
+  - Moya/RxSwift
+  - Parchment
+  - PryntTrimmerView (from `https://github.com/HHK1/PryntTrimmerView.git`)
+  - R.swift
+  - Reusable
+  - RTRootNavigationController
+  - RxDataSources
+  - SkeletonView
+  - SKPhotoBrowser
+  - SnapKit
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SVProgressHUD
+  - SwiftDate
+  - SwiftEntryKit
+  - SwifterSwift
+  - SwiftyStoreKit
+  - SwiftyUserDefaults
+  - TagListView
+  - Then
+  - "UITableView+FDTemplateLayoutCell (~> 1.6)"
+  - UMCCommon
+  - YHPhotoKit
+  - YHPopupView
+  - YPImagePicker (from `https://github.com/Yummypets/YPImagePicker.git`)
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - Alamofire
+    - AliyunOSSiOS
+    - BaiduMapKit
+    - BMKLocationKit
+    - CHIPageControl
+    - Differentiator
+    - ESTabBarController-swift
+    - FMDB
+    - FSPagerView
+    - HandyJSON
+    - Hero
+    - JCore
+    - JMessage
+    - Kingfisher
+    - Koloda
+    - Masonry
+    - Material
+    - MBProgressHUD
+    - MJRefresh
+    - mob_smssdk
+    - MOBFoundation
+    - Motion
+    - Moya
+    - Parchment
+    - pop
+    - QuickLayout
+    - R.swift
+    - R.swift.Library
+    - Reusable
+    - RTRootNavigationController
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SkeletonView
+    - SKPhotoBrowser
+    - SnapKit
+    - SteviaLayout
+    - SVProgressHUD
+    - SwiftDate
+    - SwiftEntryKit
+    - SwifterSwift
+    - SwiftyStoreKit
+    - SwiftyUserDefaults
+    - TagListView
+    - Then
+    - "UITableView+FDTemplateLayoutCell"
+    - UMCCommon
+    - YHPhotoKit
+    - YHPopupView
+
+EXTERNAL SOURCES:
+  PryntTrimmerView:
+    :git: https://github.com/HHK1/PryntTrimmerView.git
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+  YPImagePicker:
+    :git: https://github.com/Yummypets/YPImagePicker.git
+
+CHECKOUT OPTIONS:
+  PryntTrimmerView:
+    :commit: 4a9739f251fbf88f394192fdbf3195d55d3811b5
+    :git: https://github.com/HHK1/PryntTrimmerView.git
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+  YPImagePicker:
+    :commit: 27fcc3d955b5782c8645ad743f0438ea27a5a0fe
+    :git: https://github.com/Yummypets/YPImagePicker.git
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AliyunOSSiOS: 8db92936545593b9e5c66d680ef2ac0738946651
+  BaiduMapKit: e21e4c72533f263aa3c73e3b0ea13b37e7038f62
+  BMKLocationKit: fd3d6b4a9a3a1a2763819f56b780bda5fc5b8726
+  CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  JCore: 06a5c80c176c5e46e8698eec3c780e1abb0bf180
+  JMessage: 43dfcd5348573b2f4f24357b12e9b19076322606
+  Kingfisher: 657dc1077e5bbbfff864194c79f29e35b722d062
+  Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  mob_smssdk: bd7493aa6f21e12b8daed8935c32c69552907d14
+  MOBFoundation: 606bc4c10ff4c6ac573c09f5081a39c75316bc7b
+  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Parchment: 002785473861582385db5c6725165353c500198e
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SkeletonView: f72ac4df69730e48324efae062ba580c2fce974d
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
+  SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
+  SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+  SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  UMCCommon: 0cb2629b93884531621100ed66ff2bca8b181f1f
+  YHPhotoKit: e88368af1fca0a110d41b88417088f7e49876981
+  YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
+  YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
+
+PODFILE CHECKSUM: 8e4c108be23ee16ec3a73071fadae9872680a999
+
+COCOAPODS: 1.9.1

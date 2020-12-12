@@ -141,7 +141,6 @@ class IMUICameraView: UIView {
             } else {
                 
                 defaultVideoDevice = AVCaptureDevice.default(for: AVMediaType.video)
-                
                 currentCameraDeviceType = .back
             }
             

@@ -17,7 +17,7 @@ let kPlaceHolderImage = R.image.icon()
 
 //常用缩写
 let kApplication = UIApplication.shared
-let kKeyWindow = kApplication.keyWindow!
+let kKeyWindow = UIApplication.shared.delegate!.window!!
 let kAppdelegate = kApplication.delegate as! AppDelegate
 let kAliyunOssClient = kAppdelegate.client!
 let kAppNotificationCenter = NotificationCenter.default
@@ -69,10 +69,20 @@ func kBoldFontSize (_ size: CGFloat) -> UIFont{
     return UIFont.boldSystemFont(ofSize:size)
 }
 
+func kImage (_ name: String) -> UIImage{
+    return UIImage.init(named: name)!
+}
+
 //颜色相关
-let kBackgroundColor = kHexColor(hex:"#F5F5F5")!
+let kThemeColor = UIColor.black
+let kBackgroundColor = kHexColor(hex:"#F5F7FA")!
+let kDividerColor = kHexColor(hex:"#F5F5F5")!
+let kMainTextColor = k222Color
+let kSubTextColor = k666Color
 let k222Color = kHexColor(hex:"#222222")!
+let k666Color = kHexColor(hex:"#666666")!
 let k999Color = kHexColor(hex:"#999999")!
+
 func kHexColor(hex:String) -> UIColor?{
     return UIColor.init(hexString: hex)
 }

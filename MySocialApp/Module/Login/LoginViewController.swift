@@ -10,7 +10,6 @@ import UIKit
 import SwiftyUserDefaults
 import Material
 
-
 class LoginViewController: BaseViewController {
     
     var phoneTf:TextField!
@@ -19,6 +18,7 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleLabel.text = "登录"
     }
     
     override func initData() {
@@ -30,12 +30,15 @@ class LoginViewController: BaseViewController {
         phoneTf = TextField().then{
             $0.keyboardType = .numberPad
             $0.placeholder = "手机号"
-            $0.placeholderActiveColor = .purple
+            $0.placeholderActiveColor = kThemeColor
+            $0.tintColor = kThemeColor
         }
         
         passwordTf = TextField().then{
             $0.isSecureTextEntry = true
             $0.placeholder = "验证码"
+            $0.placeholderActiveColor = kThemeColor
+            $0.tintColor = kThemeColor
         }
         
         loginBtn = RaisedButton(title: "登录").then{
@@ -57,7 +60,7 @@ class LoginViewController: BaseViewController {
         self.view.addSubviews([phoneTf,passwordTf,loginBtn])
         
         phoneTf.snp.makeConstraints {
-            $0.top.equalTo(kStatusBarHeight + 20)
+            $0.top.equalTo(kTopHeight + 20)
             $0.left.equalTo(20)
             $0.right.equalTo(-20)
             $0.height.equalTo(44)

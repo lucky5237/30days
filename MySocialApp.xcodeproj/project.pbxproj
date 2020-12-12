@@ -130,6 +130,7 @@
 		222EB09F25209D3B002603DE /* IMUIBaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EB05025209D3B002603DE /* IMUIBaseMessageCell.swift */; };
 		222EB0A025209D3B002603DE /* IMUIImageMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EB05125209D3B002603DE /* IMUIImageMessageContentView.swift */; };
 		222EB0A125209D3B002603DE /* IMUIAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 222EB05325209D3B002603DE /* IMUIAssets.bundle */; };
+		2253F32325776BF700A8AA89 /* LoginInputPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */; };
 		2260541F2521B3470081880F /* CommonBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260541E2521B3470081880F /* CommonBtn.swift */; };
 		2293DD7525217F7500617C80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293DD7425217F7500617C80 /* StoreKit.framework */; };
 		22B2CEB825217BF6001BD10E /* login_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8925217BF6001BD10E /* login_01@3x.png */; };
@@ -492,6 +493,7 @@
 		2249EC4925208D1C009DDBFE /* JCMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCMainTabBarController.swift; sourceTree = "<group>"; };
 		2249EC4C25208D1E009DDBFE /* JCSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCSearchController.swift; sourceTree = "<group>"; };
 		2249EC4E25208D1E009DDBFE /* JCMoreResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCMoreResultViewController.swift; sourceTree = "<group>"; };
+		2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputPhoneController.swift; sourceTree = "<group>"; };
 		2260541E2521B3470081880F /* CommonBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBtn.swift; sourceTree = "<group>"; };
 		2293DD7425217F7500617C80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialAppDebug.entitlements; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 			children = (
 				00C5289A22C0D055003A72C0 /* LoginViewController.swift */,
 				00828B8122CC96F900AD503C /* CompleteUserInfoController.swift */,
+				2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1801,6 +1804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D9133122B7846100986FBB /* OSSTools.swift in Sources */,
+				2253F32325776BF700A8AA89 /* LoginInputPhoneController.swift in Sources */,
 				222EB08125209D3B002603DE /* DateExtension.swift in Sources */,
 				222EB07B25209D3B002603DE /* CMSampleBufferExtension.swift in Sources */,
 				222EB08025209D3B002603DE /* UIImageExtension.swift in Sources */,
@@ -2055,6 +2059,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 62LZ4FYVRB;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = MySocialApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2082,6 +2087,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = MySocialApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

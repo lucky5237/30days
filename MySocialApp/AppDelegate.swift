@@ -176,7 +176,7 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
     //进入登录页
     func enterLoginVC(){
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ChatViewController()
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
     }
     

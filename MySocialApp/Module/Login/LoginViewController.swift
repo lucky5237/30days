@@ -10,113 +10,73 @@ import UIKit
 import SwiftyUserDefaults
 import Material
 
-class LoginViewController: BaseViewController {
+class LoginViewController: UIViewController {
     
-    var phoneTf:TextField!
-    var passwordTf:TextField!
-    var loginBtn:RaisedButton!
+    var logoImgView :UIImageView!
+    var backgroundImgView :UIImageView!
+    var loginBtn:UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = "登录"
+        initSubView()
     }
     
-    override func initData() {
-        phoneTf.text = "15757115238"
-        passwordTf.text = "123456"
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-    override func initSubView() {
-        phoneTf = TextField().then{
-            $0.keyboardType = .numberPad
-            $0.placeholder = "手机号"
-            $0.placeholderActiveColor = kThemeColor
-            $0.tintColor = kThemeColor
-        }
+    
+    func initSubView() {
+        logoImgView = UIImageView.init(image: kImage("logo"))
         
-        passwordTf = TextField().then{
-            $0.isSecureTextEntry = true
-            $0.placeholder = "验证码"
-            $0.placeholderActiveColor = kThemeColor
-            $0.tintColor = kThemeColor
+        backgroundImgView = UIImageView().then{
+            $0.contentMode = .scaleAspectFill
+            $0.backgroundColor = kThemeColor
         }
-        
-        loginBtn = RaisedButton(title: "登录").then{
+    
+        loginBtn = UIButton().then{
+            $0.setTitle("开始", for: .normal)
+            $0.layer.cornerRadius = 11
+            $0.layer.masksToBounds = true
+            $0.backgroundColor = .white
+            $0.setTitleColor(kMainTextColor, for: .normal)
+            $0.titleLabel?.font = kMediumFontSize(14)
             $0.addClickCallback({[weak self] button in
                 self?.login()
             })
         }
         
-        let phoneValid = phoneTf.rx.text.orEmpty
         
-        let pwdValid = passwordTf.rx.text.orEmpty
+        self.view.addSubviews([backgroundImgView,logoImgView,loginBtn])
         
-        phoneValid.subscribe(onNext: { text in
-            if text.count > 11{
-                self.phoneTf.text = text[safe: 0..<11]
-            }
-        })
-        
-        self.view.addSubviews([phoneTf,passwordTf,loginBtn])
-        
-        phoneTf.snp.makeConstraints {
-            $0.top.equalTo(kTopHeight + 20)
-            $0.left.equalTo(20)
-            $0.right.equalTo(-20)
-            $0.height.equalTo(44)
+        backgroundImgView.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
         
-        passwordTf.snp.makeConstraints {
-            $0.top.equalTo(phoneTf.snp.bottom).offset(20)
-            $0.left.equalTo(20)
-            $0.right.equalTo(-20)
-//            $0.height.equalTo(44)
+        logoImgView.snp.makeConstraints {
+            $0.top.equalTo(kTopHeight + 23)
+            $0.width.equalTo(90)
+            $0.height.equalTo(29)
+            $0.centerX.equalTo(self.view)
         }
         
         loginBtn.snp.makeConstraints {
-            $0.top.equalTo(passwordTf.snp.bottom).offset(20)
-            $0.height.equalTo(44)
-            $0.width.equalTo(100)
+            $0.bottom.equalTo(-(kBottomSafeHeight + 11))
+            $0.height.equalTo(52)
+            $0.width.equalTo(kScreenWidth - 54)
             $0.centerX.equalTo(self.view)
         }
+        
+        
         
     }
     
     func login(){
+        self.navigationController?.pushViewController(LoginInputPhoneController())
         
-        guard let phone = phoneTf.text else {
-            return
-        }
-        
-        guard let password = passwordTf.text else {
-            return
-        }
-        
-        if phone.count != 11{
-            showInfoText("请输入正确的手机号")
-        }
-        
-//        request(.login(phone: phone, password: password), responseType: UserModel.self, successCallback: { user in
-//            print("login api success")
-//
-//            JMSGUser.login(withUsername: phone, password: password, completionHandler: { resultObject,error in
-//                if let error = error{
-//                    showErrorText("登录失败: " + error.localizedDescription)
-//                    return
-//                }
-//
-//                user.saveToLocal()
-//                kAppdelegate.enterMainVC()
-//
-//            })
-//        })
-        
-
-    }
-    
-    func goToRegisterV(){
-        let vc = CompleteUserInfoController()
-        self.present(vc, animated: true, completion: nil)
     }
 
 

@@ -37,7 +37,6 @@
 		00828B7A22CC839400AD503C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00828B7922CC839400AD503C /* MobileCoreServices.framework */; };
 		00828B7C22CC83A700AD503C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00828B7B22CC83A700AD503C /* libsqlite3.0.tbd */; };
 		00828B7E22CC83BB00AD503C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 00828B7D22CC83BB00AD503C /* libz.tbd */; };
-		00828B8222CC96F900AD503C /* CompleteUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00828B8122CC96F900AD503C /* CompleteUserInfoController.swift */; };
 		0095218022AF77930095085E /* DynamicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095217F22AF77930095085E /* DynamicModel.swift */; };
 		00AC0EC422B36CC400D06436 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC0EC322B36CC400D06436 /* PhotoViewController.swift */; };
 		00C08B4D22AF41F00083621C /* MainUserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08B4C22AF41F00083621C /* MainUserInfoTableViewCell.swift */; };
@@ -52,6 +51,15 @@
 		00D9133922B788EC00986FBB /* ThirdPartyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9133822B788EC00986FBB /* ThirdPartyKeys.swift */; };
 		2202D92E2466B35C004F2A61 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2202D92C2466B35A004F2A61 /* ChatViewController.m */; };
 		2202D92F2466B35C004F2A61 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2202D92D2466B35C004F2A61 /* ChatViewController.xib */; };
+		22041F3D258DF4D6000F4D96 /* CRBoxInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F2F258DF4D6000F4D96 /* CRBoxInputCell.m */; };
+		22041F3E258DF4D6000F4D96 /* CRBoxInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F30258DF4D6000F4D96 /* CRBoxInputView.m */; };
+		22041F3F258DF4D6000F4D96 /* CRBoxFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F31258DF4D6000F4D96 /* CRBoxFlowLayout.m */; };
+		22041F40258DF4D6000F4D96 /* CRSecrectImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F32258DF4D6000F4D96 /* CRSecrectImageView.m */; };
+		22041F42258DF4D6000F4D96 /* CRBoxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F35258DF4D6000F4D96 /* CRBoxTextView.m */; };
+		22041F43258DF4D6000F4D96 /* CRBoxInputCellProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F37258DF4D6000F4D96 /* CRBoxInputCellProperty.m */; };
+		22041F44258DF4D6000F4D96 /* CRLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22041F39258DF4D6000F4D96 /* CRLineView.m */; };
+		22041F49258E1F8D000F4D96 /* LoginSelectGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22041F48258E1F8D000F4D96 /* LoginSelectGenderController.swift */; };
+		22041F4D258E373E000F4D96 /* LoginUserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22041F4C258E373E000F4D96 /* LoginUserInfoController.swift */; };
 		222EB05425209D3B002603DE /* IMUICustomInputViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EAFF425209D31002603DE /* IMUICustomInputViewDataSource.swift */; };
 		222EB05525209D3B002603DE /* IMUIInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EAFF525209D31002603DE /* IMUIInputViewDelegate.swift */; };
 		222EB05625209D3B002603DE /* IMUICustomInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EAFF625209D31002603DE /* IMUICustomInputViewDelegate.swift */; };
@@ -130,8 +138,10 @@
 		222EB09F25209D3B002603DE /* IMUIBaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EB05025209D3B002603DE /* IMUIBaseMessageCell.swift */; };
 		222EB0A025209D3B002603DE /* IMUIImageMessageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222EB05125209D3B002603DE /* IMUIImageMessageContentView.swift */; };
 		222EB0A125209D3B002603DE /* IMUIAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 222EB05325209D3B002603DE /* IMUIAssets.bundle */; };
+		224254A6258BB9C800C74897 /* LoginSMSCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224254A5258BB9C800C74897 /* LoginSMSCodeController.swift */; };
 		2253F32325776BF700A8AA89 /* LoginInputPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */; };
 		2260541F2521B3470081880F /* CommonBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260541E2521B3470081880F /* CommonBtn.swift */; };
+		226C871825890E070053B872 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C871725890E070053B872 /* StepView.swift */; };
 		2293DD7525217F7500617C80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293DD7425217F7500617C80 /* StoreKit.framework */; };
 		22B2CEB825217BF6001BD10E /* login_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8925217BF6001BD10E /* login_01@3x.png */; };
 		22B2CEB925217BF6001BD10E /* outgoing_voice_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8A25217BF6001BD10E /* outgoing_voice_2@3x.png */; };
@@ -171,6 +181,7 @@
 		22B2CEDB25217BF7001BD10E /* JMTextBubbleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2CEB525217BF6001BD10E /* JMTextBubbleContentView.m */; };
 		22B2CEDC25217BF7001BD10E /* JMVideoBubbleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2CEB625217BF6001BD10E /* JMVideoBubbleContentView.m */; };
 		22B2CEDD25217BF7001BD10E /* JMVoiceBubbleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2CEB725217BF6001BD10E /* JMVoiceBubbleContentView.m */; };
+		22C13E972588F72F004B91AA /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C13E962588F72F004B91AA /* BaseButton.swift */; };
 		47C94D6D2A4079CDB79AAAB4 /* Pods_MySocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE0B3A0BA56E4841E3B76A1 /* Pods_MySocialApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -208,7 +219,6 @@
 		00828B7922CC839400AD503C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		00828B7B22CC83A700AD503C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		00828B7D22CC83BB00AD503C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		00828B8122CC96F900AD503C /* CompleteUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteUserInfoController.swift; sourceTree = "<group>"; };
 		0095217F22AF77930095085E /* DynamicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicModel.swift; sourceTree = "<group>"; };
 		00AC0EC322B36CC400D06436 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		00B47A8422B75FD70081D95A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -226,6 +236,22 @@
 		2202D92B2466B358004F2A61 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		2202D92C2466B35A004F2A61 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		2202D92D2466B35C004F2A61 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		22041F2E258DF4D6000F4D96 /* CRBoxInputCellProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCellProperty.h; sourceTree = "<group>"; };
+		22041F2F258DF4D6000F4D96 /* CRBoxInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCell.m; sourceTree = "<group>"; };
+		22041F30258DF4D6000F4D96 /* CRBoxInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputView.m; sourceTree = "<group>"; };
+		22041F31258DF4D6000F4D96 /* CRBoxFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxFlowLayout.m; sourceTree = "<group>"; };
+		22041F32258DF4D6000F4D96 /* CRSecrectImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRSecrectImageView.m; sourceTree = "<group>"; };
+		22041F33258DF4D6000F4D96 /* CRLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRLineView.h; sourceTree = "<group>"; };
+		22041F35258DF4D6000F4D96 /* CRBoxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxTextView.m; sourceTree = "<group>"; };
+		22041F36258DF4D6000F4D96 /* CRBoxInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputCell.h; sourceTree = "<group>"; };
+		22041F37258DF4D6000F4D96 /* CRBoxInputCellProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBoxInputCellProperty.m; sourceTree = "<group>"; };
+		22041F38258DF4D6000F4D96 /* CRBoxInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxInputView.h; sourceTree = "<group>"; };
+		22041F39258DF4D6000F4D96 /* CRLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRLineView.m; sourceTree = "<group>"; };
+		22041F3A258DF4D6000F4D96 /* CRSecrectImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRSecrectImageView.h; sourceTree = "<group>"; };
+		22041F3B258DF4D6000F4D96 /* CRBoxFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxFlowLayout.h; sourceTree = "<group>"; };
+		22041F3C258DF4D6000F4D96 /* CRBoxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBoxTextView.h; sourceTree = "<group>"; };
+		22041F48258E1F8D000F4D96 /* LoginSelectGenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelectGenderController.swift; sourceTree = "<group>"; };
+		22041F4C258E373E000F4D96 /* LoginUserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfoController.swift; sourceTree = "<group>"; };
 		222EAED825209A2C002603DE /* MySocialApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySocialApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		222EAFF425209D31002603DE /* IMUICustomInputViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUICustomInputViewDataSource.swift; sourceTree = "<group>"; };
 		222EAFF525209D31002603DE /* IMUIInputViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUIInputViewDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +332,7 @@
 		222EB05025209D3B002603DE /* IMUIBaseMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUIBaseMessageCell.swift; sourceTree = "<group>"; };
 		222EB05125209D3B002603DE /* IMUIImageMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUIImageMessageContentView.swift; sourceTree = "<group>"; };
 		222EB05325209D3B002603DE /* IMUIAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IMUIAssets.bundle; sourceTree = "<group>"; };
+		224254A5258BB9C800C74897 /* LoginSMSCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSMSCodeController.swift; sourceTree = "<group>"; };
 		2249EB6C25208D10009DDBFE /* JCNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCNetworkManager.swift; sourceTree = "<group>"; };
 		2249EB6E25208D10009DDBFE /* UIView+JChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+JChat.swift"; sourceTree = "<group>"; };
 		2249EB6F25208D10009DDBFE /* MBProgressHUD+JChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+JChat.swift"; sourceTree = "<group>"; };
@@ -495,6 +522,7 @@
 		2249EC4E25208D1E009DDBFE /* JCMoreResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCMoreResultViewController.swift; sourceTree = "<group>"; };
 		2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputPhoneController.swift; sourceTree = "<group>"; };
 		2260541E2521B3470081880F /* CommonBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBtn.swift; sourceTree = "<group>"; };
+		226C871725890E070053B872 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		2293DD7425217F7500617C80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialAppDebug.entitlements; sourceTree = "<group>"; };
 		22B2CE8925217BF6001BD10E /* login_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_01@3x.png"; sourceTree = "<group>"; };
@@ -542,6 +570,7 @@
 		22B2CEB525217BF6001BD10E /* JMTextBubbleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTextBubbleContentView.m; sourceTree = "<group>"; };
 		22B2CEB625217BF6001BD10E /* JMVideoBubbleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMVideoBubbleContentView.m; sourceTree = "<group>"; };
 		22B2CEB725217BF6001BD10E /* JMVoiceBubbleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMVoiceBubbleContentView.m; sourceTree = "<group>"; };
+		22C13E962588F72F004B91AA /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		4EE0B3A0BA56E4841E3B76A1 /* Pods_MySocialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySocialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BB6979B42A07C995975064 /* Pods-MySocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySocialApp.release.xcconfig"; path = "Target Support Files/Pods-MySocialApp/Pods-MySocialApp.release.xcconfig"; sourceTree = "<group>"; };
 		F1B106D2341D0752D95D4433 /* Pods-MySocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySocialApp.debug.xcconfig"; path = "Target Support Files/Pods-MySocialApp/Pods-MySocialApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -623,6 +652,7 @@
 		0066DA2622A9469B002D307E /* MySocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				22C13E952588F711004B91AA /* Vender */,
 				2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */,
 				00692D0B22CDCE51003294CF /* ThirdParty */,
 				00C5F06122C359B8005B62E1 /* Define */,
@@ -665,6 +695,7 @@
 		00692D0B22CDCE51003294CF /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				22041F2D258DF4D6000F4D96 /* CRBoxInputView */,
 				22B2CE8725217BF6001BD10E /* JMessageBridge */,
 				2202D9892466B813004F2A61 /* JChat */,
 				2202D88B2466B101004F2A61 /* aurora-imui */,
@@ -705,8 +736,10 @@
 			isa = PBXGroup;
 			children = (
 				00C5289A22C0D055003A72C0 /* LoginViewController.swift */,
-				00828B8122CC96F900AD503C /* CompleteUserInfoController.swift */,
 				2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */,
+				224254A5258BB9C800C74897 /* LoginSMSCodeController.swift */,
+				22041F48258E1F8D000F4D96 /* LoginSelectGenderController.swift */,
+				22041F4C258E373E000F4D96 /* LoginUserInfoController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -748,6 +781,27 @@
 				2249EB6A25208D10009DDBFE /* Utilites */,
 			);
 			path = JChat;
+			sourceTree = "<group>";
+		};
+		22041F2D258DF4D6000F4D96 /* CRBoxInputView */ = {
+			isa = PBXGroup;
+			children = (
+				22041F2E258DF4D6000F4D96 /* CRBoxInputCellProperty.h */,
+				22041F2F258DF4D6000F4D96 /* CRBoxInputCell.m */,
+				22041F30258DF4D6000F4D96 /* CRBoxInputView.m */,
+				22041F31258DF4D6000F4D96 /* CRBoxFlowLayout.m */,
+				22041F32258DF4D6000F4D96 /* CRSecrectImageView.m */,
+				22041F33258DF4D6000F4D96 /* CRLineView.h */,
+				22041F35258DF4D6000F4D96 /* CRBoxTextView.m */,
+				22041F36258DF4D6000F4D96 /* CRBoxInputCell.h */,
+				22041F37258DF4D6000F4D96 /* CRBoxInputCellProperty.m */,
+				22041F38258DF4D6000F4D96 /* CRBoxInputView.h */,
+				22041F39258DF4D6000F4D96 /* CRLineView.m */,
+				22041F3A258DF4D6000F4D96 /* CRSecrectImageView.h */,
+				22041F3B258DF4D6000F4D96 /* CRBoxFlowLayout.h */,
+				22041F3C258DF4D6000F4D96 /* CRBoxTextView.h */,
+			);
+			path = CRBoxInputView;
 			sourceTree = "<group>";
 		};
 		222EAFF225209D31002603DE /* IMUIInputView */ = {
@@ -1572,6 +1626,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		22C13E952588F711004B91AA /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				22C13E962588F72F004B91AA /* BaseButton.swift */,
+				226C871725890E070053B872 /* StepView.swift */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
 		B61FCDB64631D1EC802CF308 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1815,10 +1878,12 @@
 				222EB09925209D3B002603DE /* IMUITextView.swift in Sources */,
 				222EB07525209D3B002603DE /* IMUIPhotoCaptureDelegate.swift in Sources */,
 				222EB08225209D3B002603DE /* IMUIAudioPlayerHelper.swift in Sources */,
-				00828B8222CC96F900AD503C /* CompleteUserInfoController.swift in Sources */,
 				2202D92E2466B35C004F2A61 /* ChatViewController.m in Sources */,
 				222EB07F25209D3B002603DE /* StringExtension.swift in Sources */,
 				00C08B4F22AF451E0083621C /* BaseTableViewCell.swift in Sources */,
+				22041F3F258DF4D6000F4D96 /* CRBoxFlowLayout.m in Sources */,
+				22041F40258DF4D6000F4D96 /* CRSecrectImageView.m in Sources */,
+				22C13E972588F72F004B91AA /* BaseButton.swift in Sources */,
 				222EB05A25209D3B002603DE /* IMUIRecordVoiceHelper.swift in Sources */,
 				22B2CEDC25217BF7001BD10E /* JMVideoBubbleContentView.m in Sources */,
 				22B2CED825217BF7001BD10E /* UserModel.m in Sources */,
@@ -1831,8 +1896,10 @@
 				007465F422CA032A00778035 /* MessageViewController.swift in Sources */,
 				222EB08625209D3B002603DE /* IMUIMessageModel.swift in Sources */,
 				222EB09F25209D3B002603DE /* IMUIBaseMessageCell.swift in Sources */,
+				22041F43258DF4D6000F4D96 /* CRBoxInputCellProperty.m in Sources */,
 				222EB08B25209D3B002603DE /* IMUIUserProtocol.swift in Sources */,
 				222EB09025209D3B002603DE /* IMUIMessageCellLayoutProtocol.swift in Sources */,
+				22041F3D258DF4D6000F4D96 /* CRBoxInputCell.m in Sources */,
 				222EB05625209D3B002603DE /* IMUICustomInputViewDelegate.swift in Sources */,
 				0066DA2A22A9469B002D307E /* ViewController.swift in Sources */,
 				222EB09425209D3B002603DE /* IMUIWebImageTaskManager.swift in Sources */,
@@ -1848,12 +1915,14 @@
 				222EB09A25209D3B002603DE /* CIImageView.swift in Sources */,
 				222EB08825209D3B002603DE /* IMUIReuseViewCache.swift in Sources */,
 				222EB07D25209D3B002603DE /* UIViewExtension.swift in Sources */,
+				22041F3E258DF4D6000F4D96 /* CRBoxInputView.m in Sources */,
 				222EB06425209D3B002603DE /* IMUIGalleryContainerCell.swift in Sources */,
 				22B2CEDD25217BF7001BD10E /* JMVoiceBubbleContentView.m in Sources */,
 				0023D47D22ADF14B00C1355A /* RootViewController.swift in Sources */,
 				222EB09E25209D3B002603DE /* IMUIVideoMessageContentView.swift in Sources */,
 				222EB07025209D3B002603DE /* IMUIEmojiItemCell.swift in Sources */,
 				22B2CED925217BF7001BD10E /* MessageLayout.m in Sources */,
+				22041F42258DF4D6000F4D96 /* CRBoxTextView.m in Sources */,
 				222EB08A25209D3B002603DE /* IMUIMessageProtocol.swift in Sources */,
 				22B2CED725217BF7001BD10E /* MessageModel.m in Sources */,
 				0066DA2822A9469B002D307E /* AppDelegate.swift in Sources */,
@@ -1870,14 +1939,18 @@
 				222EB09825209D3B002603DE /* IMUIMessageBubbleView.swift in Sources */,
 				00D9132F22B77B6500986FBB /* SocialUserDefaults.swift in Sources */,
 				222EB09625209D3B002603DE /* IMUIMessageStatusView.swift in Sources */,
+				22041F49258E1F8D000F4D96 /* LoginSelectGenderController.swift in Sources */,
 				222EB06325209D3B002603DE /* IMUIHidenStatusViewController.swift in Sources */,
 				222EB07C25209D3B002603DE /* CIImageExtension.swift in Sources */,
 				222EB06025209D3B002603DE /* IMUIFeatureListIconCell.swift in Sources */,
+				224254A6258BB9C800C74897 /* LoginSMSCodeController.swift in Sources */,
 				222EB09525209D3B002603DE /* IMUIChatLayout.swift in Sources */,
+				226C871825890E070053B872 /* StepView.swift in Sources */,
 				222EB07E25209D3B002603DE /* CGRectExtension.swift in Sources */,
 				222EB09325209D3B002603DE /* IMUIWebImageDownloader.swift in Sources */,
 				222EB06B25209D3B002603DE /* IMUIEmojiCell.swift in Sources */,
 				222EB09B25209D3B002603DE /* IMUIVoiceMessageContentView.swift in Sources */,
+				22041F4D258E373E000F4D96 /* LoginUserInfoController.swift in Sources */,
 				222EB05B25209D3B002603DE /* IMUIInputView.swift in Sources */,
 				222EB08925209D3B002603DE /* IMUIMessageContentViewProtocol.swift in Sources */,
 				222EB05525209D3B002603DE /* IMUIInputViewDelegate.swift in Sources */,
@@ -1889,6 +1962,7 @@
 				0066DA3D22AA1146002D307E /* BaseTableViewController.swift in Sources */,
 				222EB06225209D3B002603DE /* IMUICameraView.swift in Sources */,
 				007BF11522AFA8B500218C40 /* UserHomepageViewController.swift in Sources */,
+				22041F44258DF4D6000F4D96 /* CRLineView.m in Sources */,
 				222EB07A25209D3B002603DE /* UIColorExtension.swift in Sources */,
 				222EB05725209D3B002603DE /* BundleInputViewExtension.swift in Sources */,
 				222EB09725209D3B002603DE /* IMUIMessageCollectionView.swift in Sources */,

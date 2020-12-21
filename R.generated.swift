@@ -391,7 +391,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 27 images.
+  /// This `R.image` struct is generated, and contains static references to 31 images.
   struct image {
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
@@ -431,6 +431,8 @@ struct R: Rswift.Validatable {
     static let login_01 = Rswift.ImageResource(bundle: R.hostingBundle, name: "login_01")
     /// Image `login_02`.
     static let login_02 = Rswift.ImageResource(bundle: R.hostingBundle, name: "login_02")
+    /// Image `logo`.
+    static let logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "logo")
     /// Image `me_1`.
     static let me_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "me_1")
     /// Image `me`.
@@ -447,6 +449,12 @@ struct R: Rswift.Validatable {
     static let outgoing_voice_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "outgoing_voice_2")
     /// Image `outgoing_voice_3`.
     static let outgoing_voice_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "outgoing_voice_3")
+    /// Image `未选中`.
+    static let 未选中 = Rswift.ImageResource(bundle: R.hostingBundle, name: "未选中")
+    /// Image `添加照片`.
+    static let 添加照片 = Rswift.ImageResource(bundle: R.hostingBundle, name: "添加照片")
+    /// Image `选中`.
+    static let 选中 = Rswift.ImageResource(bundle: R.hostingBundle, name: "选中")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
@@ -582,6 +590,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "logo", bundle: ..., traitCollection: ...)`
+    static func logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.logo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "me", bundle: ..., traitCollection: ...)`
     static func me(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.me, compatibleWith: traitCollection)
@@ -634,6 +649,27 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "outgoing_voice_3", bundle: ..., traitCollection: ...)`
     static func outgoing_voice_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.outgoing_voice_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "未选中", bundle: ..., traitCollection: ...)`
+    static func 未选中(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.未选中, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "添加照片", bundle: ..., traitCollection: ...)`
+    static func 添加照片(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.添加照片, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "选中", bundle: ..., traitCollection: ...)`
+    static func 选中(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.选中, compatibleWith: traitCollection)
     }
     #endif
 

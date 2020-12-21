@@ -93,6 +93,7 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - Schedule (2.1.0)
   - SkeletonView (1.9)
   - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
@@ -164,6 +165,7 @@ DEPENDENCIES:
   - Reusable
   - RTRootNavigationController
   - RxDataSources
+  - Schedule (~> 2.0)
   - SkeletonView
   - SKPhotoBrowser
   - SnapKit
@@ -218,6 +220,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - Schedule
     - SkeletonView
     - SKPhotoBrowser
     - SnapKit
@@ -290,6 +293,7 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  Schedule: 00e6d7bbdbdb000fd1f51a7d10e9f88a8c451fda
   SkeletonView: f72ac4df69730e48324efae062ba580c2fce974d
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
@@ -309,6 +313,6 @@ SPEC CHECKSUMS:
   YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 8e4c108be23ee16ec3a73071fadae9872680a999
+PODFILE CHECKSUM: 2edfe3a56f97fda678a09dbfb3f05477e9bafe9c
 
 COCOAPODS: 1.10.0

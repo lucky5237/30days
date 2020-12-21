@@ -18,8 +18,10 @@
 #import "JCAddMapViewController.h"
 #import "Reachability.h"
 #import "KILabel.h"
+#import "CRBoxInputView.h"
 #import "DLSlideView.h"
 #import "DLTabedSlideView.h"
+#import "CRBoxInputView.h"
 #import <BMKLocationKit/BMKLocationComponent.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件

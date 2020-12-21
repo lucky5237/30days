@@ -48,4 +48,5 @@ target 'MySocialApp' do
   pod 'PryntTrimmerView', :git => 'https://github.com/HHK1/PryntTrimmerView.git'
   pod 'CHIPageControl'
   pod 'Parchment'
+  pod 'Schedule', '~> 2.0'
 end

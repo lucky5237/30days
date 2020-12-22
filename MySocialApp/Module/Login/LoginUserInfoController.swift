@@ -128,15 +128,15 @@ class LoginUserInfoController: BaseViewController {
         
         loginBtn.snp.makeConstraints {
             $0.bottom.equalTo(-(kBottomSafeHeight + 11))
-            $0.height.equalTo(52)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         
         stepView.snp.makeConstraints {
             $0.bottom.equalTo(loginBtn.snp_topMargin).offset(-27)
             $0.height.equalTo(30)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         

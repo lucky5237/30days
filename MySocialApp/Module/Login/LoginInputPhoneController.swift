@@ -11,7 +11,7 @@ import UIKit
 class LoginInputPhoneController: UIViewController {
     
     var hintLabel:UILabel!
-    var phoneTf:UITextField!
+    var phoneTf:BaseTextField!
     var loginBtn:BaseButton!
     var stepView:StepView!
     
@@ -31,9 +31,18 @@ class LoginInputPhoneController: UIViewController {
     
     func initSubView() {
         
+        
+        let titleLabel = UILabel().then{
+            $0.textColor = kMainTextColor
+            $0.font = kMediumFontSize(30)
+            $0.numberOfLines = 0
+            $0.text = "登录/注册"
+        }
+        
+        
         hintLabel = UILabel().then{
             $0.textColor = kSubTextColor
-            $0.font = kFontSize(18)
+            $0.font = kFontSize(20)
             $0.numberOfLines = 0
             $0.text = "如未注册，将自动进入注册流程"
         }
@@ -50,15 +59,8 @@ class LoginInputPhoneController: UIViewController {
         areaNumView.addSubview(areaNumLabel);
         
         
-        phoneTf = UITextField().then{
+        phoneTf = BaseTextField(placeholder: "请输入手机号").then{
             $0.keyboardType = .numberPad
-            $0.font = kMediumFontSize(20)
-            $0.attributedPlaceholder = .init(string: "请输入手机号", attributes: [NSAttributedString.Key.foregroundColor: k999Color,NSAttributedString.Key.font : kFontSize(14)])
-            $0.tintColor = kThemeColor
-            $0.backgroundColor = kHexColor(hex: "#F6F7F8")
-            $0.layer.cornerRadius = 25
-            $0.layer.masksToBounds = true
-            $0.textColor = kThemeColor
             $0.clearButtonMode = .always
             $0.leftView = areaNumView
             $0.leftViewMode = .always
@@ -88,32 +90,38 @@ class LoginInputPhoneController: UIViewController {
             self.loginBtn.isEnabled = self.phoneTf.text?.count == 11
         })
         
-        self.view.addSubviews([hintLabel,phoneTf,stepView,loginBtn])
+        self.view.addSubviews([titleLabel,hintLabel,phoneTf,stepView,loginBtn])
+        
+        titleLabel.snp.makeConstraints{
+            $0.top.equalTo(kTopHeight + 82)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
+        }
         
         hintLabel.snp.makeConstraints{
-            $0.top.equalTo(kTopHeight + 90)
-            $0.left.equalTo(27)
-            $0.right.equalTo(-27)
+            $0.top.equalTo(titleLabel.snp_bottomMargin).offset(16)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
         }
         
         phoneTf.snp.makeConstraints {
-            $0.top.equalTo(hintLabel.snp_bottomMargin).offset(27)
-            $0.left.equalTo(27)
-            $0.right.equalTo(-27)
-            $0.height.equalTo(50)
+            $0.top.equalTo(hintLabel.snp_bottomMargin).offset(48)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
+            $0.height.equalTo(64)
         }
         
         loginBtn.snp.makeConstraints {
             $0.bottom.equalTo(-(kBottomSafeHeight + 11))
-            $0.height.equalTo(52)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         
         stepView.snp.makeConstraints {
             $0.bottom.equalTo(loginBtn.snp_topMargin).offset(-27)
             $0.height.equalTo(30)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
     }

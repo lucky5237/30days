@@ -22,18 +22,18 @@ class BaseButton: UIButton {
         }
     }
     
-//    override var isEnabled: Bool{
-//        didSet{
-//            if self.isEnabled {
-//                self.alpha = 1
-//            } else {
-//                self.alpha = 0.1
-//            }
-//        }
-//    }
+    override var isEnabled: Bool{
+        didSet{
+            if self.isEnabled {
+                self.alpha = 1
+            } else {
+                self.alpha = 0.5
+            }
+        }
+    }
     
     public init(title: String?, disabledTitle:String? = nil) {
-        super.init(frame: .zero)
+        super.init(frame: .init(x: 0, y: 0, width: kScreenWidth - 48, height: 58))
         
         setup()
         
@@ -58,13 +58,30 @@ class BaseButton: UIButton {
         setup()
     }
     
+    
     func setup() {
-        self.layer.cornerRadius = 11
-        self.layer.masksToBounds = true
-        self.backgroundColor = kThemeColor
-        self.setTitleColor(.white, for: .normal)
-        self.setTitleColor(.init(white: 1, alpha: 0.5), for: .disabled)
-        self.titleLabel?.font = kMediumFontSize(14)
+        
+        self.setTitleColor(kNormalButtonTitleColor, for: .normal)
+        self.titleLabel?.font = kMediumFontSize(16)
+        // shadowCode
+        self.layer.shadowColor = kHexColor(hex: "#A6ABBD")!.cgColor
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 10
+        
+        
+        let bgLayer = CAGradientLayer()
+        bgLayer.masksToBounds = true
+        bgLayer.cornerRadius = 28
+        bgLayer.colors = [kHexColor(hex: "#FF2D00")!.cgColor, kHexColor(hex: "#FF5000")!.cgColor]
+        bgLayer.locations = [0, 1]
+        bgLayer.frame = self.bounds
+        bgLayer.startPoint = CGPoint(x: 0, y: 0)
+        bgLayer.endPoint = CGPoint(x: 1, y: 1)
+        self.layer.insertSublayer(bgLayer, at: 0)
+        
+       
+        
     }
     
     

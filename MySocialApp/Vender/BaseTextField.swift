@@ -11,14 +11,8 @@ import Foundation
 class BaseTextField: UITextField {
     
     lazy var bottomBorder: CALayer = {
-        let border = CALayer();
-//        border.borderColor = kHexColor(hex: "#CED0D6")!.cgColor;
+        let border = CALayer()
         border.borderWidth = 2;
-        border.shadowColor = kHexColor(hex: "#FAFBFF")!.cgColor
-        border.shadowOffset = CGSize(width: -2, height: -2)
-        border.shadowOpacity = 1
-        border.shadowRadius = 8
-        
         border.cornerRadius = 16
         border.masksToBounds = true
         return border
@@ -30,7 +24,7 @@ class BaseTextField: UITextField {
         setup()
         
         if let placeholder = placeholder {
-            self.attributedPlaceholder = .init(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: kHexColor(hex: "#626260")!,NSAttributedString.Key.font : kMediumFontSize(16)])
+            self.attributedPlaceholder = .init(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: kSubTextColor,NSAttributedString.Key.font : kFontSize(16)])
         }
         
         if let text = text {
@@ -39,10 +33,9 @@ class BaseTextField: UITextField {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews();
+        super.layoutSubviews()
         
-        bottomBorder.borderColor = isFirstResponder ? kThemeColor.cgColor : kHexColor(hex: "#CED0D6")!.cgColor;
-        bottomBorder.borderWidth = isFirstResponder ? 1 : 2
+        bottomBorder.borderColor = isFirstResponder ? kThemeColor.cgColor : kHexColor(hex: "#CED0D6")!.cgColor
         bottomBorder.frame = self.bounds
     }
     
@@ -52,8 +45,14 @@ class BaseTextField: UITextField {
     }
     
     func setup() {
-        self.textColor = kHexColor(hex: "#292925")!
-        self.font = kMediumFontSize(16)
+    
+        self.layer.shadowColor = kHexColor(hex: "#A6ABBD")!.cgColor
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 8
+        
+        self.textColor = kMainTextColor;
+        self.font = kMediumFontSize(20)
         self.tintColor = kThemeColor
         self.layer.addSublayer(bottomBorder)
         

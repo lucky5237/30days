@@ -18,6 +18,7 @@ class LoginSMSCodeController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
         self.view.backgroundColor = .white
         initSubView()
         initData()
@@ -35,8 +36,15 @@ class LoginSMSCodeController : UIViewController {
     
     func initSubView() {
         
-        let hintStr = NSMutableAttributedString.init(string: "验证码已发送至 +86 \(phone!)", attributes: [NSAttributedString.Key.font:kFontSize(18),NSAttributedString.Key.foregroundColor:kSubTextColor])
-        hintStr.addAttributes([NSAttributedString.Key.font:kMediumFontSize(18),NSAttributedString.Key.foregroundColor:kMainTextColor], range: .init(location: hintStr.length - 15, length: 15))
+        let titleLabel = UILabel().then{
+            $0.textColor = kMainTextColor
+            $0.font = kBoldFontSize(26)
+            $0.numberOfLines = 0
+            $0.text = "输入验证码"
+        }
+        
+        let hintStr = NSMutableAttributedString.init(string: "验证码已发送至 +86 \(phone!)", attributes: [NSAttributedString.Key.font:kFontSize(14),NSAttributedString.Key.foregroundColor:kSubTextColor])
+        hintStr.addAttributes([NSAttributedString.Key.font:kMediumFontSize(14),NSAttributedString.Key.foregroundColor:kThemeColor], range: .init(location: hintStr.length - 15, length: 15))
         
         hintLabel = UILabel().then{
             $0.numberOfLines = 0
@@ -44,18 +52,19 @@ class LoginSMSCodeController : UIViewController {
         }
         
         let cellProperty = CRBoxInputCellProperty()
-        cellProperty.cellCursorColor = k999Color
-        cellProperty.cellCursorWidth = 2
-        cellProperty.cellCursorHeight = 20
-        cellProperty.cornerRadius = 0
-        cellProperty.borderWidth = 0
-        cellProperty.cellFont = kMediumFontSize(32)
+        cellProperty.cornerRadius = 16
+        cellProperty.borderWidth = 1
+        cellProperty.cellBorderColorFilled = kThemeColor
+        cellProperty.cellBorderColorNormal = kHexColor(hex: "#CED0D6")!
+        cellProperty.cellBorderColorSelected = kHexColor(hex: "#CED0D6")!
+        cellProperty.cellFont = kBoldFontSize(20)
         cellProperty.cellTextColor = kMainTextColor
-        cellProperty.showLine = true
+        cellProperty.showLine = false
         
         smsCodeView = CRBoxInputView(codeLength: 4)
         smsCodeView.ifNeedCursor = false
-        smsCodeView.boxFlowLayout?.itemSize = .init(width: 50, height: 50)
+        let width = (kScreenWidth - 120) / 4
+        smsCodeView.boxFlowLayout?.itemSize = .init(width: width, height: width)
         smsCodeView.customCellProperty = cellProperty
         smsCodeView.loadAndPrepare(withBeginEdit: true)
         smsCodeView.textDidChangeblock = { (text,isFinished) in
@@ -63,43 +72,50 @@ class LoginSMSCodeController : UIViewController {
         }
         
         stepView = StepView(stepNum: 2, currentStep: 2)
+        stepView.heroID = "step"
         
         loginBtn = BaseButton(title: "开始30days").then{
             $0.addClickCallback({[weak self] button in
                 self?.login()
             })
-            
+            $0.heroID = "button"
             $0.isEnabled = false
         }
         
         
-        self.view.addSubviews([hintLabel,smsCodeView,stepView,loginBtn])
+        self.view.addSubviews([titleLabel,hintLabel,smsCodeView,stepView,loginBtn])
+        
+        titleLabel.snp.makeConstraints{
+            $0.top.equalTo(kStatusBarHeight + 90)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
+        }
         
         hintLabel.snp.makeConstraints{
-            $0.top.equalTo(kTopHeight + 90)
-            $0.left.equalTo(27)
-            $0.right.equalTo(-27)
+            $0.top.equalTo(titleLabel.snp_bottomMargin).offset(16)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
         }
         
         smsCodeView.snp.makeConstraints {
-            $0.width.equalTo(kScreenWidth - 80)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
-            $0.top.equalTo(hintLabel.snp_bottomMargin).offset(32)
-            $0.height.equalTo(50)
+            $0.top.equalTo(hintLabel.snp_bottomMargin).offset(75)
+            $0.height.equalTo(width)
         }
         
         
         loginBtn.snp.makeConstraints {
-            $0.bottom.equalTo(-(kBottomSafeHeight + 11))
-            $0.height.equalTo(52)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.bottom.equalTo(-(kBottomSafeHeight + 16))
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         
         stepView.snp.makeConstraints {
             $0.bottom.equalTo(loginBtn.snp_topMargin).offset(-27)
             $0.height.equalTo(30)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         

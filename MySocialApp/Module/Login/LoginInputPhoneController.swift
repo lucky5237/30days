@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class LoginInputPhoneController: UIViewController {
     
@@ -34,7 +35,7 @@ class LoginInputPhoneController: UIViewController {
         
         let titleLabel = UILabel().then{
             $0.textColor = kMainTextColor
-            $0.font = kMediumFontSize(30)
+            $0.font = kBoldFontSize(26)
             $0.numberOfLines = 0
             $0.text = "登录/注册"
         }
@@ -42,7 +43,7 @@ class LoginInputPhoneController: UIViewController {
         
         hintLabel = UILabel().then{
             $0.textColor = kSubTextColor
-            $0.font = kFontSize(20)
+            $0.font = kFontSize(14)
             $0.numberOfLines = 0
             $0.text = "如未注册，将自动进入注册流程"
         }
@@ -53,7 +54,7 @@ class LoginInputPhoneController: UIViewController {
         let areaNumLabel = UILabel(text: "+86").then{
             $0.textColor = kMainTextColor
             $0.font = kMediumFontSize(20)
-            $0.frame = .init(x: 20, y: 0, width: 40, height: 50)
+            $0.frame = .init(x: 20, y: 0, width: 40, height: 64)
         }
         
         areaNumView.addSubview(areaNumLabel);
@@ -61,7 +62,6 @@ class LoginInputPhoneController: UIViewController {
         
         phoneTf = BaseTextField(placeholder: "请输入手机号").then{
             $0.keyboardType = .numberPad
-            $0.clearButtonMode = .always
             $0.leftView = areaNumView
             $0.leftViewMode = .always
         }
@@ -70,12 +70,13 @@ class LoginInputPhoneController: UIViewController {
         
         
         stepView = StepView(stepNum: 2)
+        stepView.heroID = "step"
         
         loginBtn = BaseButton(title: "获取验证码").then{
             $0.addClickCallback({[weak self] button in
                 self?.login()
             })
-            
+            $0.heroID = "button"
             $0.isEnabled = false
         }
         
@@ -93,7 +94,7 @@ class LoginInputPhoneController: UIViewController {
         self.view.addSubviews([titleLabel,hintLabel,phoneTf,stepView,loginBtn])
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalTo(kTopHeight + 82)
+            $0.top.equalTo(kStatusBarHeight + 90)
             $0.left.equalTo(24)
             $0.right.equalTo(-24)
         }
@@ -112,7 +113,7 @@ class LoginInputPhoneController: UIViewController {
         }
         
         loginBtn.snp.makeConstraints {
-            $0.bottom.equalTo(-(kBottomSafeHeight + 11))
+            $0.bottom.equalTo(-(kBottomSafeHeight + 16))
             $0.height.equalTo(56)
             $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)

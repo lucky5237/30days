@@ -70,8 +70,6 @@ class LoginViewController: UIViewController {
             $0.centerX.equalTo(self.view)
         }
         
-        
-        
     }
     
     func login(){

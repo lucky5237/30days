@@ -19,7 +19,7 @@ class LoginInputPhoneController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = kBackgroundColor
         initSubView()
         initData()
         
@@ -32,7 +32,6 @@ class LoginInputPhoneController: UIViewController {
     
     func initSubView() {
         
-        
         let titleLabel = UILabel().then{
             $0.textColor = kMainTextColor
             $0.font = kBoldFontSize(26)
@@ -40,34 +39,16 @@ class LoginInputPhoneController: UIViewController {
             $0.text = "登录/注册"
         }
         
-        
         hintLabel = UILabel().then{
             $0.textColor = kSubTextColor
             $0.font = kFontSize(14)
             $0.numberOfLines = 0
             $0.text = "如未注册，将自动进入注册流程"
         }
-        
-        
-        let areaNumView = UIView(frame: .init(x: 0, y: 0, width: 80, height: 50))
-        
-        let areaNumLabel = UILabel(text: "+86").then{
-            $0.textColor = kMainTextColor
-            $0.font = kMediumFontSize(20)
-            $0.frame = .init(x: 20, y: 0, width: 40, height: 64)
-        }
-        
-        areaNumView.addSubview(areaNumLabel);
-        
-        
+
         phoneTf = BaseTextField(placeholder: "请输入手机号").then{
             $0.keyboardType = .numberPad
-            $0.leftView = areaNumView
-            $0.leftViewMode = .always
         }
-        
-        phoneTf.addSubview(areaNumLabel)
-        
         
         stepView = StepView(stepNum: 2)
         stepView.heroID = "step"

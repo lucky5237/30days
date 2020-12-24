@@ -10,13 +10,14 @@ import Foundation
 import Material
 class LoginUserInfoController: BaseViewController {
     
-    var avatarImgView:UIImageView!
-    var nameTextfield:TextField!
-    var introTextfield:TextField!
+    var avatarImgView:BaseImageView!
+    var nameTextfield:BaseTextField!
+    var introTextfield:BaseTextField!
     var loginBtn:BaseButton!
     var stepView:StepView!
     var scrollView:UIScrollView!
     var addIconImgView:UIImageView!
+    var hintLabel:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +25,20 @@ class LoginUserInfoController: BaseViewController {
     
     override func initSubView() {
         
-        
-        
         scrollView = UIScrollView().then{
             $0.showsHorizontalScrollIndicator = false
             $0.contentSize = .init(width: kScreenWidth, height: kScreenHeight - kTopHeight - kBottomSafeHeight - 100)
         }
         
-        avatarImgView = UIImageView().then{
-            $0.backgroundColor = kHexColor(hex: "#DBDBDB")
-            $0.layer.masksToBounds = true
-            $0.layer.cornerRadius = 50
-            $0.isUserInteractionEnabled = true
-            $0.contentMode = .scaleAspectFill
+        avatarImgView = BaseImageView(showShadow: true, cornerRadius: 50).then{
+            $0.backgroundColor = .white
+        }
+        
+        hintLabel = UILabel().then{
+            $0.textColor = kSubTextColor
+            $0.font = kFontSize(14)
+            $0.numberOfLines = 0
+            $0.text = "上传头像，让更多的人认识你"
         }
         
         avatarImgView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(addImage)))
@@ -46,27 +48,14 @@ class LoginUserInfoController: BaseViewController {
         }
         
         
-        nameTextfield = TextField().then{
-            $0.placeholder = "请输入您的昵称"
-            $0.placeholderActiveColor = k999Color
-            $0.dividerActiveColor = k222Color
-            $0.font = kFontSize(16)
-            $0.textColor = kMainTextColor
-//            $0.placeholderActiveScale = 1
-        }
+        nameTextfield = BaseTextField(placeholder: "给自己取一个昵称")
 
-        introTextfield = TextField().then{
-            $0.placeholder = "请输入您的个性签名"
-            $0.placeholderActiveColor = k999Color
-            $0.dividerActiveColor = k222Color
-            $0.font = kFontSize(16)
-            $0.textColor = kMainTextColor
-        }
+        introTextfield = BaseTextField(placeholder:"一句话介绍自己")
         
         
         stepView = StepView(stepNum: 3, currentStep: 2)
         
-        loginBtn = BaseButton(title: "下一步").then{
+        loginBtn = BaseButton(title: "完成注册").then{
             $0.isEnabled = false
 
         }
@@ -74,11 +63,6 @@ class LoginUserInfoController: BaseViewController {
         nameTextfield.rx.text.orEmpty.subscribe(onNext: { [self] text in
             if text.count > 15{
                 self.nameTextfield.text = text[safe: 0..<15]
-            }
-            if self.nameTextfield.isFirstResponder{
-                self.nameTextfield.placeholder = "请输入您的昵称 \(self.nameTextfield.text?.count ?? 0)/15"
-            }else{
-                self.nameTextfield.placeholder = "请输入您的昵称"
             }
             self.loginBtn.isEnabled = text.count > 0
         })
@@ -88,17 +72,13 @@ class LoginUserInfoController: BaseViewController {
             if text.count > 20{
                 self.introTextfield.text = text[safe: 0..<20]
             }
-            if self.introTextfield.isFirstResponder{
-                self.introTextfield.placeholder = "请输入您的个性签名 \(self.introTextfield.text?.count ?? 0)/20"
-            }else{
-                self.introTextfield.placeholder = "请输入您的个性签名"
-            }
         })
         
         self.view.addSubview(scrollView)
-        scrollView.addSubviews([avatarImgView,nameTextfield,introTextfield])
+        scrollView.addSubviews([avatarImgView,hintLabel,nameTextfield,introTextfield])
         avatarImgView.addSubview(addIconImgView)
         self.view.addSubviews([stepView,loginBtn])
+        
         
         
         scrollView.snp.makeConstraints{
@@ -114,20 +94,27 @@ class LoginUserInfoController: BaseViewController {
             $0.centerX.equalTo(scrollView)
         }
         
+        hintLabel.snp.makeConstraints{
+            $0.top.equalTo(avatarImgView.snp_bottomMargin).offset(20)
+            $0.centerX.equalTo(scrollView)
+        }
+        
         nameTextfield.snp.makeConstraints{
-            $0.top.equalTo(avatarImgView.snp_bottomMargin).offset(52)
-            $0.left.equalTo(27)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.top.equalTo(hintLabel.snp_bottomMargin).offset(48)
+            $0.left.equalTo(24)
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
         }
         
         introTextfield.snp.makeConstraints{
-            $0.top.equalTo(nameTextfield.snp_bottomMargin).offset(72)
-            $0.left.equalTo(27)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.top.equalTo(nameTextfield.snp_bottomMargin).offset(32)
+            $0.left.equalTo(24)
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
         }
         
         loginBtn.snp.makeConstraints {
-            $0.bottom.equalTo(-(kBottomSafeHeight + 11))
+            $0.bottom.equalTo(-(kBottomSafeHeight + 16))
             $0.height.equalTo(56)
             $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
@@ -146,6 +133,8 @@ class LoginUserInfoController: BaseViewController {
         }
         
     }
+    
+    
     
     @objc func addImage(){
         self.launchPhotoPicker { (items, cancelled) in

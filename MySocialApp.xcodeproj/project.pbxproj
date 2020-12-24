@@ -140,10 +140,11 @@
 		222EB0A125209D3B002603DE /* IMUIAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 222EB05325209D3B002603DE /* IMUIAssets.bundle */; };
 		224254A6258BB9C800C74897 /* LoginSMSCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224254A5258BB9C800C74897 /* LoginSMSCodeController.swift */; };
 		2253F32325776BF700A8AA89 /* LoginInputPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */; };
-		2260541F2521B3470081880F /* CommonBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260541E2521B3470081880F /* CommonBtn.swift */; };
 		226C871825890E070053B872 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C871725890E070053B872 /* StepView.swift */; };
 		2277073F25923B5E00B1DD5F /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2277073E25923B5E00B1DD5F /* BaseTextField.swift */; };
 		2293DD7525217F7500617C80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293DD7425217F7500617C80 /* StoreKit.framework */; };
+		22A6A94025943CF400B44F58 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A93F25943CF400B44F58 /* BaseAlertView.swift */; };
+		22A6A94325946D1400B44F58 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A94225946D1400B44F58 /* BaseImageView.swift */; };
 		22B2CEB825217BF6001BD10E /* login_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8925217BF6001BD10E /* login_01@3x.png */; };
 		22B2CEB925217BF6001BD10E /* outgoing_voice_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8A25217BF6001BD10E /* outgoing_voice_2@3x.png */; };
 		22B2CEBA25217BF6001BD10E /* inComing_bubble@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8B25217BF6001BD10E /* inComing_bubble@3x.png */; };
@@ -522,11 +523,12 @@
 		2249EC4C25208D1E009DDBFE /* JCSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCSearchController.swift; sourceTree = "<group>"; };
 		2249EC4E25208D1E009DDBFE /* JCMoreResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCMoreResultViewController.swift; sourceTree = "<group>"; };
 		2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputPhoneController.swift; sourceTree = "<group>"; };
-		2260541E2521B3470081880F /* CommonBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBtn.swift; sourceTree = "<group>"; };
 		226C871725890E070053B872 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		2277073E25923B5E00B1DD5F /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		2293DD7425217F7500617C80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialAppDebug.entitlements; sourceTree = "<group>"; };
+		22A6A93F25943CF400B44F58 /* BaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertView.swift; sourceTree = "<group>"; };
+		22A6A94225946D1400B44F58 /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
 		22B2CE8925217BF6001BD10E /* login_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_01@3x.png"; sourceTree = "<group>"; };
 		22B2CE8A25217BF6001BD10E /* outgoing_voice_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "outgoing_voice_2@3x.png"; sourceTree = "<group>"; };
 		22B2CE8B25217BF6001BD10E /* inComing_bubble@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inComing_bubble@3x.png"; sourceTree = "<group>"; };
@@ -617,7 +619,6 @@
 				00C5F06322C35DC6005B62E1 /* Me */,
 				00C5289922C0D034003A72C0 /* Login */,
 				00C08B4622AE3EB20083621C /* Main */,
-				2260541E2521B3470081880F /* CommonBtn.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1634,6 +1635,8 @@
 				22C13E962588F72F004B91AA /* BaseButton.swift */,
 				226C871725890E070053B872 /* StepView.swift */,
 				2277073E25923B5E00B1DD5F /* BaseTextField.swift */,
+				22A6A93F25943CF400B44F58 /* BaseAlertView.swift */,
+				22A6A94225946D1400B44F58 /* BaseImageView.swift */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -1911,8 +1914,8 @@
 				0066DA4522AA4C7D002D307E /* BaseResponseModel.swift in Sources */,
 				00C08B4D22AF41F00083621C /* MainUserInfoTableViewCell.swift in Sources */,
 				007BF11922AFAE3B00218C40 /* BaseView.swift in Sources */,
+				22A6A94325946D1400B44F58 /* BaseImageView.swift in Sources */,
 				222EB09225209D3B002603DE /* IMUIVideoFileLoader.swift in Sources */,
-				2260541F2521B3470081880F /* CommonBtn.swift in Sources */,
 				222EB07725209D3B002603DE /* IMUIFeatureListView.swift in Sources */,
 				0066DA4D22AAD660002D307E /* BaseModel.swift in Sources */,
 				22B2CEDB25217BF7001BD10E /* JMTextBubbleContentView.m in Sources */,
@@ -1924,6 +1927,7 @@
 				22B2CEDD25217BF7001BD10E /* JMVoiceBubbleContentView.m in Sources */,
 				0023D47D22ADF14B00C1355A /* RootViewController.swift in Sources */,
 				222EB09E25209D3B002603DE /* IMUIVideoMessageContentView.swift in Sources */,
+				22A6A94025943CF400B44F58 /* BaseAlertView.swift in Sources */,
 				222EB07025209D3B002603DE /* IMUIEmojiItemCell.swift in Sources */,
 				22B2CED925217BF7001BD10E /* MessageLayout.m in Sources */,
 				22041F42258DF4D6000F4D96 /* CRBoxTextView.m in Sources */,

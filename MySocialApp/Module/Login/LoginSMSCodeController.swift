@@ -19,7 +19,7 @@ class LoginSMSCodeController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hero.isEnabled = true
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = kBackgroundColor
         initSubView()
         initData()
         
@@ -53,11 +53,11 @@ class LoginSMSCodeController : UIViewController {
         
         let cellProperty = CRBoxInputCellProperty()
         cellProperty.cornerRadius = 16
-        cellProperty.borderWidth = 1
+        cellProperty.borderWidth = 2
         cellProperty.cellBorderColorFilled = kThemeColor
         cellProperty.cellBorderColorNormal = kHexColor(hex: "#CED0D6")!
         cellProperty.cellBorderColorSelected = kHexColor(hex: "#CED0D6")!
-        cellProperty.cellFont = kBoldFontSize(20)
+        cellProperty.cellFont = kBoldFontSize(24)
         cellProperty.cellTextColor = kMainTextColor
         cellProperty.showLine = false
         
@@ -145,7 +145,8 @@ class LoginSMSCodeController : UIViewController {
     }
     
     func goToSelectGenderVC(){
-        let vc = LoginSelectGenderController()
+        let vc = UINavigationController.init(rootViewController: LoginSelectGenderController())
+        vc.navigationController?.navigationBar.isHidden = true
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }

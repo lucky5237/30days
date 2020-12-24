@@ -10,6 +10,18 @@ import Foundation
 
 class BaseButton: UIButton {
     
+    lazy var bgLayer: CAGradientLayer = {
+        let layer = CAGradientLayer()
+        layer.masksToBounds = true
+        layer.colors = [kHexColor(hex: "#FF2D00")!.cgColor, kHexColor(hex: "#FF5000")!.cgColor]
+        layer.locations = [0, 1]
+        layer.startPoint = CGPoint(x: 0, y:-0.1)
+        layer.endPoint = CGPoint(x: 1, y: 1)
+        return layer
+    }()
+    
+    
+    
     open var title: String? {
         didSet {
             self.setTitle(title, for: .normal)
@@ -33,7 +45,7 @@ class BaseButton: UIButton {
     }
     
     public init(title: String?, disabledTitle:String? = nil) {
-        super.init(frame: .init(x: 0, y: 0, width: kScreenWidth - 48, height: 58))
+        super.init(frame: .zero)
         
         setup()
         
@@ -58,29 +70,23 @@ class BaseButton: UIButton {
         setup()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        bgLayer.cornerRadius = self.bounds.size.height / 2
+        bgLayer.frame = self.bounds
+    }
+    
     
     func setup() {
-        
         self.setTitleColor(kNormalButtonTitleColor, for: .normal)
-        self.titleLabel?.font = kMediumFontSize(16)
+        self.titleLabel?.font = kBoldFontSize(18)
         // shadowCode
-        self.layer.shadowColor = kHexColor(hex: "#A6ABBD")!.cgColor
+        self.layer.shadowColor = kHexColor(hex: "#BDB9A6")!.cgColor
         self.layer.shadowOffset = CGSize(width: 5, height: 5)
         self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 10
+        self.layer.shadowRadius = 5
         
-        
-        let bgLayer = CAGradientLayer()
-        bgLayer.masksToBounds = true
-        bgLayer.cornerRadius = 28
-        bgLayer.colors = [kHexColor(hex: "#FF2D00")!.cgColor, kHexColor(hex: "#FF5000")!.cgColor]
-        bgLayer.locations = [0, 1]
-        bgLayer.frame = self.bounds
-        bgLayer.startPoint = CGPoint(x: 0, y: 0)
-        bgLayer.endPoint = CGPoint(x: 1, y: 1)
         self.layer.insertSublayer(bgLayer, at: 0)
-        
-       
         
     }
     

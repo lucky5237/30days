@@ -75,7 +75,7 @@ func kImage (_ name: String) -> UIImage{
 
 //颜色相关
 let kThemeColor = kHexColor(hex:"#FF3E00")!
-let kBackgroundColor = kHexColor(hex:"#F5F7FA")!
+let kBackgroundColor = kHexColor(hex:"#F6F5F0")!
 let kDividerColor = kHexColor(hex:"#F5F5F5")!
 let kMainTextColor = kHexColor(hex:"#292925")!
 let kSubTextColor = kHexColor(hex:"#626260")!

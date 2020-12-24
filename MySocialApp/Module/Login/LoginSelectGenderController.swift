@@ -16,7 +16,7 @@ class LoginSelectGenderController :UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = kBackgroundColor
         initSubView()
         initData()
         
@@ -29,20 +29,28 @@ class LoginSelectGenderController :UIViewController{
     
     func initSubView() {
         
+        
+        let titleLabel = UILabel().then{
+            $0.textColor = kMainTextColor
+            $0.font = kBoldFontSize(26)
+            $0.numberOfLines = 0
+            $0.text = "选择性别"
+        }
+        
         hintLabel = UILabel().then{
             $0.textColor = kSubTextColor
-            $0.font = kFontSize(18)
+            $0.font = kFontSize(14)
             $0.numberOfLines = 0
-            $0.text = "请选择您的性别"
+            $0.text = "性别一旦选定，将无法修改"
         }
         
         maleBtn = UIButton().then{
-            $0.setTitle("男生", for:.normal)
+            $0.setTitle("男,BOY", for:.normal)
             $0.setTitleColor(kMainTextColor, for:.normal)
             $0.contentHorizontalAlignment = .left
             $0.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 16)
             $0.titleEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 0)
-            $0.titleLabel?.font = kMediumFontSize(18)
+            $0.titleLabel?.font = kMediumFontSize(20)
             $0.setImage(kImage("选中"), for: .selected)
             $0.setImage(kImage("选中"), for: [.selected, .highlighted])
             $0.setImage(kImage("未选中"), for: .normal)
@@ -51,19 +59,19 @@ class LoginSelectGenderController :UIViewController{
                     sender.isSelected = true
                     sender.setTitleColor(kMainTextColor, for: .normal)
                     self.femaleBtn.isSelected = false
-                    self.femaleBtn.setTitleColor(.lightGray, for: .normal)
+                    self.femaleBtn.setTitleColor(kHexColor(hex:"#A9AEB9")!, for: .normal)
                     self.loginBtn.isEnabled = true
                 }
             }
         }
         
         femaleBtn = UIButton().then{
-            $0.setTitle("女生", for:.normal)
+            $0.setTitle("女,GIRL", for:.normal)
             $0.setTitleColor(kMainTextColor, for:.normal)
             $0.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 16)
             $0.contentHorizontalAlignment = .left
             $0.titleEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 0)
-            $0.titleLabel?.font = kMediumFontSize(18)
+            $0.titleLabel?.font = kMediumFontSize(20)
             $0.setImage(kImage("选中"), for: .selected)
             $0.setImage(kImage("选中"), for: [.selected, .highlighted])
             $0.setImage(kImage("未选中"), for: .normal)
@@ -72,7 +80,7 @@ class LoginSelectGenderController :UIViewController{
                     sender.isSelected = true
                     sender.setTitleColor(kMainTextColor, for: .normal)
                     self.maleBtn.isSelected = false
-                    self.maleBtn.setTitleColor(.lightGray, for: .normal)
+                    self.maleBtn.setTitleColor(kHexColor(hex:"#A9AEB9")!, for: .normal)
                     self.loginBtn.isEnabled = true
                 }
             }
@@ -81,7 +89,7 @@ class LoginSelectGenderController :UIViewController{
         
         stepView = StepView(stepNum: 3)
         
-        loginBtn = BaseButton(title: "下一步").then{
+        loginBtn = BaseButton(title: "最后一步，完善资料").then{
             $0.isEnabled = false
             $0.addClickCallback { sender in
                 let vc = LoginUserInfoController()
@@ -89,37 +97,43 @@ class LoginSelectGenderController :UIViewController{
             }
         }
         
-        self.view.addSubviews([hintLabel,maleBtn,femaleBtn,stepView,loginBtn])
+        self.view.addSubviews([titleLabel,hintLabel,maleBtn,femaleBtn,stepView,loginBtn])
+        
+        titleLabel.snp.makeConstraints{
+            $0.top.equalTo(kStatusBarHeight + 90)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
+        }
         
         hintLabel.snp.makeConstraints{
-            $0.top.equalTo(kTopHeight + 90)
-            $0.left.equalTo(27)
-            $0.right.equalTo(-27)
+            $0.top.equalTo(titleLabel.snp_bottomMargin).offset(16)
+            $0.left.equalTo(24)
+            $0.right.equalTo(-24)
         }
         
         maleBtn.snp.makeConstraints {
             $0.top.equalTo(hintLabel.snp_bottomMargin).offset(54)
-            $0.left.equalTo(27)
-            $0.width.equalTo(100)
+            $0.left.equalTo(24)
+            $0.width.equalTo(120)
         }
         
         femaleBtn.snp.makeConstraints {
             $0.top.equalTo(maleBtn.snp_bottomMargin).offset(26)
-            $0.left.equalTo(27)
-            $0.width.equalTo(100)
+            $0.left.equalTo(24)
+            $0.width.equalTo(120)
         }
         
         loginBtn.snp.makeConstraints {
-            $0.bottom.equalTo(-(kBottomSafeHeight + 11))
-            $0.height.equalTo(52)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.bottom.equalTo(-(kBottomSafeHeight + 16))
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
         
         stepView.snp.makeConstraints {
             $0.bottom.equalTo(loginBtn.snp_topMargin).offset(-27)
             $0.height.equalTo(30)
-            $0.width.equalTo(kScreenWidth - 54)
+            $0.width.equalTo(kScreenWidth - 48)
             $0.centerX.equalTo(self.view)
         }
     }

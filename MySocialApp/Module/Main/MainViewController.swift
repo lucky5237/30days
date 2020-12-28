@@ -13,13 +13,17 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
     
     var dataArray:[UserModel] = []
     var slideView:KolodaView!
+    var likeBtn:BaseIconButton!
+    var dislikeBtn:BaseIconButton!
+    var chatBtn:BaseIconButton!
+    var lastDirection:SwipeResultDirection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func initSubView() {
-        setupSlideView()
+        setup()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(redrawSwipe))
     }
     
@@ -30,7 +34,7 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
             let user = UserModel()
             user.userName = "name \(i)"
             user.userId = i
-            user.userAvatar = "http://lorempixel.com/400/200/sports/\(i)/"
+            user.userAvatar = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2631334549,246605465&fm=26&gp=0.jpg"
             dataArray.append(user)
         }
         
@@ -38,28 +42,66 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
         self.hideLoading()
     }
     
-    //设置左右滑动视图
-    func setupSlideView(){
-        slideView = KolodaView(frame: CGRect(x: 20, y: kTopHeight + 20, width: kScreenWidth - 40, height: kSafeAreaHeight - 20))
-        slideView.backgroundCardsTopMargin = 1
-        slideView.cornerRadius = 10
+    
+    func setup(){
+        slideView = KolodaView(frame: CGRect(x: 24, y: kTopHeight + 24, width: kScreenWidth - 48, height: kSafeAreaHeight -  48 - kScaleHeight(117)))
+        slideView.backgroundCardsTopMargin = 0
+        slideView.countOfVisibleCards = 2
         slideView.delegate = self
         slideView.dataSource = self
         self.view.addSubview(slideView)
+        
+        self.dislikeBtn = BaseIconButton(iconName: "不喜欢")
+        self.likeBtn = BaseIconButton(bgColor: kThemeColor, iconName: "喜欢")
+        self.chatBtn = BaseIconButton(bgColor: kHexColor(hex: "#59EDB7")!, iconName: "喜欢")
+        
+        likeBtn.addClickCallback { sender in
+            self.lastDirection = .right
+            self.slideView.swipe(.right)
+        }
+        
+        dislikeBtn.addClickCallback { sender in
+            self.lastDirection = .left
+            self.slideView.swipe(.left)
+        }
+        
+        chatBtn.addClickCallback { sender in
+            
+        }
+        
+        self.view.addSubview(dislikeBtn)
+        self.view.addSubview(likeBtn)
+        self.view.addSubview(chatBtn)
+        
+        dislikeBtn.snp.makeConstraints{
+            $0.top.equalTo(slideView.snp_bottomMargin).offset(kScaleHeight(48))
+            $0.width.height.equalTo(kScaleHeight(64))
+            $0.centerX.equalToSuperview().offset(-kScaleHeight(96))
+        }
+        
+        likeBtn.snp.makeConstraints{
+            $0.top.equalTo(slideView.snp_bottomMargin).offset(kScaleHeight(48))
+            $0.width.height.equalTo(kScaleHeight(64))
+            $0.centerX.equalToSuperview().offset(kScaleHeight(96))
+        }
+        
+        chatBtn.snp.makeConstraints{
+            $0.top.equalTo(slideView.snp_bottomMargin).offset(kScaleHeight(48))
+            $0.width.height.equalTo(kScaleHeight(64))
+            $0.centerX.equalToSuperview()
+        }
+        
+        self.view.bringSubviewToFront(slideView)
+        
     }
     
-    //MARK: koloda delegate && datasource
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         return dataArray.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let imageView = UIImageView()
-        imageView.loadUrlImageFromNetwork(dataArray[index].userAvatar ?? "")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 10
-        return imageView
+        let user:UserModel = dataArray[index]
+        return SlideItemView(user: user)
     }
     
     //    func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
@@ -88,8 +130,8 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        let seed = Int.random(in: 0..<2)
-        koloda.swipe(seed == 0 ? .left : .right, force: true)
+//        let seed = Int.random(in: 0..<2)
+//        koloda.swipe(seed == 0 ? .left : .right, force: true)
     }
     /*
      // MARK: - Navigation
@@ -102,7 +144,13 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
      */
     
     @objc func redrawSwipe(){
-        slideView.revertAction(direction: .left)
+        if let lastDirection = self.lastDirection {
+            slideView.revertAction(direction: lastDirection)
+            self.lastDirection = nil
+        }else{
+            self.showMessage("请选滑动一张卡片", type: .warning)
+        }
+        
     }
     
     @objc override func backBtnTapped() {

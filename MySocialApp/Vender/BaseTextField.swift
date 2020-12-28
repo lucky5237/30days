@@ -12,7 +12,7 @@ class BaseTextField: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     
-    lazy var bottomBorder: CALayer = {
+    lazy var subLayer: CALayer = {
         let border = CALayer()
         border.backgroundColor = kBackgroundColor.cgColor
         border.borderWidth = 2;
@@ -38,9 +38,9 @@ class BaseTextField: UITextField {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        bottomBorder.borderColor = isFirstResponder ? kThemeColor.cgColor : kHexColor(hex: "#E2DCD1")!.cgColor
-        bottomBorder.borderWidth = isFirstResponder ? 1 : 2
-        bottomBorder.frame = self.bounds
+        subLayer.borderColor = isFirstResponder ? kThemeColor.cgColor : kHexColor(hex: "#E2DCD1")!.cgColor
+        subLayer.borderWidth = isFirstResponder ? 1 : 2
+        subLayer.frame = self.bounds
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,7 +57,7 @@ class BaseTextField: UITextField {
         self.textColor = kMainTextColor;
         self.font = kMediumFontSize(20)
         self.tintColor = kThemeColor
-        self.layer.addSublayer(bottomBorder)
+        self.layer.addSublayer(subLayer)
         
     }
     

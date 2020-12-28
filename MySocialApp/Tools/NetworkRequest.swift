@@ -45,7 +45,7 @@ let bag = DisposeBag()
 func request<T>(_ target:API,responseType type:T.Type,successCallback: @escaping (T) -> Void,failureCallback:((Error) -> Void)? = nil){
     api.rx.request(target).filterSuccessfulStatusCodes().mapJSON(failsOnEmptyData: true).subscribe(onSuccess: { response in
         guard let resp = BaseResponseModel<T>.deserialize(from: response as? [String:Any]) else{
-            showErrorText("json解析错误")
+            print("json解析错误")
             return
         }
         if resp.isAck(){

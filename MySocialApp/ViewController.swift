@@ -23,11 +23,9 @@ class ViewController: BaseTableViewController<DynamicModel,MainUserInfoTableView
         self.pageEnable = true
     }
     
-    
-    
-    override func customRequestApi() -> API? {
-        return .dynamicList(page: currentPage, size: pageSize)
-    }
+//    override func customRequestApi() -> API? {
+//        return .dynamicList(page: currentPage, size: pageSize)
+//    }
     
     override func customConfigCell(currentTableView tableView: UITableView, currentIndexPath indexPath: IndexPath, currentCell cell: MainUserInfoTableViewCell, currentModel model: DynamicModel) {
         cell.selectPhotoCallback = { index in

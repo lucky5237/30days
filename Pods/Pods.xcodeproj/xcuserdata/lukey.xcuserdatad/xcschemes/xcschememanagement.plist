@@ -129,6 +129,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pastel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MySocialApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -275,6 +280,11 @@
 			<false/>
 		</dict>
 		<key>YPImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>lottie-ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -78,9 +78,22 @@ class BaseAlertView: UIView {
         self.addSubview(self.cancelBtn)
         self.addSubview(self.confirmBtn)
         
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview();
+        }
         
-       
         
+        contentLabel.snp.makeConstraints{
+            $0.top.equalToSuperview();
+        }
+        
+        cancelBtn.snp.makeConstraints{
+            $0.top.equalToSuperview();
+        }
+        
+        confirmBtn.snp.makeConstraints{
+            $0.top.equalToSuperview();
+        }
         
         
         // shadowCode

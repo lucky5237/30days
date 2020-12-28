@@ -391,7 +391,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 31 images.
+  /// This `R.image` struct is generated, and contains static references to 33 images.
   struct image {
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
@@ -449,6 +449,10 @@ struct R: Rswift.Validatable {
     static let outgoing_voice_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "outgoing_voice_2")
     /// Image `outgoing_voice_3`.
     static let outgoing_voice_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "outgoing_voice_3")
+    /// Image `不喜欢`.
+    static let 不喜欢 = Rswift.ImageResource(bundle: R.hostingBundle, name: "不喜欢")
+    /// Image `喜欢`.
+    static let 喜欢 = Rswift.ImageResource(bundle: R.hostingBundle, name: "喜欢")
     /// Image `未选中`.
     static let 未选中 = Rswift.ImageResource(bundle: R.hostingBundle, name: "未选中")
     /// Image `添加照片`.
@@ -649,6 +653,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "outgoing_voice_3", bundle: ..., traitCollection: ...)`
     static func outgoing_voice_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.outgoing_voice_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "不喜欢", bundle: ..., traitCollection: ...)`
+    static func 不喜欢(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.不喜欢, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "喜欢", bundle: ..., traitCollection: ...)`
+    static func 喜欢(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.喜欢, compatibleWith: traitCollection)
     }
     #endif
 

@@ -49,4 +49,6 @@ target 'MySocialApp' do
   pod 'CHIPageControl'
   pod 'Parchment'
   pod 'Schedule', '~> 2.0'
+  pod "Pastel"
+  pod 'lottie-ios'
 end

@@ -142,6 +142,12 @@
 		2253F32325776BF700A8AA89 /* LoginInputPhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */; };
 		226C871825890E070053B872 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C871725890E070053B872 /* StepView.swift */; };
 		2277073F25923B5E00B1DD5F /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2277073E25923B5E00B1DD5F /* BaseTextField.swift */; };
+		22869B7A2599767E00640D7D /* SlideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22869B792599767E00640D7D /* SlideItemView.swift */; };
+		22869BBA2599825300640D7D /* BaseIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22869BB92599825300640D7D /* BaseIconButton.swift */; };
+		22869C0D2599AE4D00640D7D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22869C0C2599AE4C00640D7D /* GradientView.swift */; };
+		22869C102599C3CC00640D7D /* GSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22869C0F2599C3CC00640D7D /* GSMessage.swift */; };
+		22869C2A2599D28800640D7D /* SlideLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22869C292599D28800640D7D /* SlideLoadingView.swift */; };
+		22869C6C2599D42800640D7D /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 22869C6B2599D42800640D7D /* search.json */; };
 		2293DD7525217F7500617C80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293DD7425217F7500617C80 /* StoreKit.framework */; };
 		22A6A94025943CF400B44F58 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A93F25943CF400B44F58 /* BaseAlertView.swift */; };
 		22A6A94325946D1400B44F58 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A94225946D1400B44F58 /* BaseImageView.swift */; };
@@ -525,6 +531,12 @@
 		2253F32225776BF700A8AA89 /* LoginInputPhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputPhoneController.swift; sourceTree = "<group>"; };
 		226C871725890E070053B872 /* StepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		2277073E25923B5E00B1DD5F /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		22869B792599767E00640D7D /* SlideItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideItemView.swift; sourceTree = "<group>"; };
+		22869BB92599825300640D7D /* BaseIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIconButton.swift; sourceTree = "<group>"; };
+		22869C0C2599AE4C00640D7D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		22869C0F2599C3CC00640D7D /* GSMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSMessage.swift; sourceTree = "<group>"; };
+		22869C292599D28800640D7D /* SlideLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideLoadingView.swift; sourceTree = "<group>"; };
+		22869C6B2599D42800640D7D /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		2293DD7425217F7500617C80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialAppDebug.entitlements; sourceTree = "<group>"; };
 		22A6A93F25943CF400B44F58 /* BaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertView.swift; sourceTree = "<group>"; };
@@ -655,6 +667,7 @@
 		0066DA2622A9469B002D307E /* MySocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				22869C682599D3BE00640D7D /* Res */,
 				22C13E952588F711004B91AA /* Vender */,
 				2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */,
 				00692D0B22CDCE51003294CF /* ThirdParty */,
@@ -698,6 +711,7 @@
 		00692D0B22CDCE51003294CF /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				22869C0F2599C3CC00640D7D /* GSMessage.swift */,
 				22041F2D258DF4D6000F4D96 /* CRBoxInputView */,
 				22B2CE8725217BF6001BD10E /* JMessageBridge */,
 				2202D9892466B813004F2A61 /* JChat */,
@@ -731,6 +745,8 @@
 			isa = PBXGroup;
 			children = (
 				00C08B4C22AF41F00083621C /* MainUserInfoTableViewCell.swift */,
+				22869B792599767E00640D7D /* SlideItemView.swift */,
+				22869C292599D28800640D7D /* SlideLoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1553,6 +1569,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		22869C682599D3BE00640D7D /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				22869C6B2599D42800640D7D /* search.json */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
 		22B2CE8725217BF6001BD10E /* JMessageBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -1632,11 +1656,13 @@
 		22C13E952588F711004B91AA /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				22869C0C2599AE4C00640D7D /* GradientView.swift */,
 				22C13E962588F72F004B91AA /* BaseButton.swift */,
 				226C871725890E070053B872 /* StepView.swift */,
 				2277073E25923B5E00B1DD5F /* BaseTextField.swift */,
 				22A6A93F25943CF400B44F58 /* BaseAlertView.swift */,
 				22A6A94225946D1400B44F58 /* BaseImageView.swift */,
+				22869BB92599825300640D7D /* BaseIconButton.swift */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -1760,6 +1786,7 @@
 				0066DA2F22A9469D002D307E /* Assets.xcassets in Resources */,
 				222EB07925209D3B002603DE /* IMUIInputViewAssets.bundle in Resources */,
 				22B2CED225217BF7001BD10E /* incoming_voice_1@3x.png in Resources */,
+				22869C6C2599D42800640D7D /* search.json in Resources */,
 				222EB06925209D3B002603DE /* IMUIEmojiCell.xib in Resources */,
 				0066DA2D22A9469B002D307E /* Main.storyboard in Resources */,
 				22B2CEC025217BF7001BD10E /* incoming_voice_2@2x.png in Resources */,
@@ -1896,6 +1923,7 @@
 				22B2CED825217BF7001BD10E /* UserModel.m in Sources */,
 				222EB09125209D3B002603DE /* IMUIChatDataManager.swift in Sources */,
 				222EB08425209D3B002603DE /* UIImageMessageListExtension.swift in Sources */,
+				22869BBA2599825300640D7D /* BaseIconButton.swift in Sources */,
 				222EB08E25209D3B002603DE /* IMUIMessageStatusViewProtocol.swift in Sources */,
 				007BF11722AFACF000218C40 /* UserHomepageHeaderView.swift in Sources */,
 				222EB06825209D3B002603DE /* IMUIFeatureView.swift in Sources */,
@@ -1912,6 +1940,7 @@
 				222EB09425209D3B002603DE /* IMUIWebImageTaskManager.swift in Sources */,
 				222EB05825209D3B002603DE /* IMUIFeatureIconModel.swift in Sources */,
 				0066DA4522AA4C7D002D307E /* BaseResponseModel.swift in Sources */,
+				22869C102599C3CC00640D7D /* GSMessage.swift in Sources */,
 				00C08B4D22AF41F00083621C /* MainUserInfoTableViewCell.swift in Sources */,
 				007BF11922AFAE3B00218C40 /* BaseView.swift in Sources */,
 				22A6A94325946D1400B44F58 /* BaseImageView.swift in Sources */,
@@ -1921,6 +1950,7 @@
 				22B2CEDB25217BF7001BD10E /* JMTextBubbleContentView.m in Sources */,
 				222EB09A25209D3B002603DE /* CIImageView.swift in Sources */,
 				222EB08825209D3B002603DE /* IMUIReuseViewCache.swift in Sources */,
+				22869C2A2599D28800640D7D /* SlideLoadingView.swift in Sources */,
 				222EB07D25209D3B002603DE /* UIViewExtension.swift in Sources */,
 				22041F3E258DF4D6000F4D96 /* CRBoxInputView.m in Sources */,
 				222EB06425209D3B002603DE /* IMUIGalleryContainerCell.swift in Sources */,
@@ -1941,6 +1971,8 @@
 				00AC0EC422B36CC400D06436 /* PhotoViewController.swift in Sources */,
 				222EB05F25209D3B002603DE /* IMUICameraCell.swift in Sources */,
 				0066DA4022AA380B002D307E /* R.generated.swift in Sources */,
+				22869C0D2599AE4D00640D7D /* GradientView.swift in Sources */,
+				22869B7A2599767E00640D7D /* SlideItemView.swift in Sources */,
 				222EB09C25209D3B002603DE /* IMUITextMessageContentView.swift in Sources */,
 				222EB05425209D3B002603DE /* IMUICustomInputViewDataSource.swift in Sources */,
 				0023D48322ADF5D200C1355A /* MainViewController.swift in Sources */,

@@ -50,6 +50,7 @@ PODS:
   - Kingfisher/Core (5.15.4)
   - Koloda (5.0.1):
     - pop (~> 1.0)
+  - lottie-ios (3.1.8)
   - Masonry (1.1.0)
   - Material (3.1.8):
     - Material/Core (= 3.1.8)
@@ -69,6 +70,7 @@ PODS:
     - Moya/Core
     - RxSwift (~> 5.0)
   - Parchment (2.4.0)
+  - Pastel (0.6.0)
   - pop (1.0.12)
   - PryntTrimmerView (4.0.2)
   - QuickLayout (3.0.0)
@@ -153,6 +155,7 @@ DEPENDENCIES:
   - JMessage
   - Kingfisher
   - Koloda
+  - lottie-ios
   - Masonry
   - Material
   - MBProgressHUD
@@ -160,6 +163,7 @@ DEPENDENCIES:
   - mob_smssdk
   - Moya/RxSwift
   - Parchment
+  - Pastel
   - PryntTrimmerView (from `https://github.com/HHK1/PryntTrimmerView.git`)
   - R.swift
   - Reusable
@@ -201,6 +205,7 @@ SPEC REPOS:
     - JMessage
     - Kingfisher
     - Koloda
+    - lottie-ios
     - Masonry
     - Material
     - MBProgressHUD
@@ -210,6 +215,7 @@ SPEC REPOS:
     - Motion
     - Moya
     - Parchment
+    - Pastel
     - pop
     - QuickLayout
     - R.swift
@@ -273,6 +279,7 @@ SPEC CHECKSUMS:
   JMessage: 43dfcd5348573b2f4f24357b12e9b19076322606
   Kingfisher: 657dc1077e5bbbfff864194c79f29e35b722d062
   Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -282,6 +289,7 @@ SPEC CHECKSUMS:
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Parchment: 002785473861582385db5c6725165353c500198e
+  Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
@@ -313,6 +321,6 @@ SPEC CHECKSUMS:
   YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 2edfe3a56f97fda678a09dbfb3f05477e9bafe9c
+PODFILE CHECKSUM: 9d6bddd242706e09829052eedff85d62f8e42adf
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.1

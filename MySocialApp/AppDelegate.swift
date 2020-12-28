@@ -67,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
 extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManagerDelegate{
     
+    
     //初始化app一般设置
     func initConfig(){
         if #available(iOS 11.0, *) {
@@ -74,6 +75,7 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
             UITableView.appearance().estimatedSectionFooterHeight = 0
             UITableView.appearance().estimatedSectionHeaderHeight = 0
         }
+        
     }
     
     //初始化服务端设置
@@ -161,8 +163,8 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
         if kIsLogin{
             enterMainVC()
         }else{
-            enterLoginVC()
-//            enterMainVC()
+//            enterLoginVC()
+            enterMainVC()
         }
     }
     
@@ -176,7 +178,7 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
     //进入登录页
     func enterLoginVC(){
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController.init(rootViewController:LoginUserInfoController())
+        window?.rootViewController = UINavigationController.init(rootViewController:LoginViewController())
         window?.makeKeyAndVisible()
     }
     

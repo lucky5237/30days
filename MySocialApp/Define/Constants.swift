@@ -37,8 +37,12 @@ let kTabbarHeight:CGFloat = kIsIPhoneXSeries() ? 83.0 : 49.0
 let kBottomSafeHeight:CGFloat = kIsIPhoneXSeries() ? 34 : 0
 let kTopHeight:CGFloat = kIsIPhoneXSeries() ? 88 : 64
 let kSafeAreaHeight:CGFloat = kScreenHeight - kTabbarHeight - kTopHeight
-func kScale(_ originSize:CGFloat) -> CGFloat {
-    return originSize * kScreenWidth / 375.0
+func kScaleWidth(_ width:CGFloat) -> CGFloat {
+    return width * kScreenWidth / 375.0
+}
+
+func kScaleHeight(_ height:CGFloat) -> CGFloat {
+    return height * kScreenHeight / 812.0
 }
 
 //设备信息

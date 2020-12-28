@@ -17,6 +17,18 @@ PODS:
   - BaiduMapKit/Utils (6.0.0):
     - BaiduMapKit/Base
   - BMKLocationKit (1.8.5)
+  - BRPickerView (2.7.3):
+    - BRPickerView/AddressPickerView (= 2.7.3)
+    - BRPickerView/Base (= 2.7.3)
+    - BRPickerView/DatePickerView (= 2.7.3)
+    - BRPickerView/StringPickerView (= 2.7.3)
+  - BRPickerView/AddressPickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.7.3)
+  - BRPickerView/DatePickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.7.3):
+    - BRPickerView/Base
   - CHIPageControl (0.2):
     - CHIPageControl/Aji (= 0.2)
     - CHIPageControl/Aleppo (= 0.2)
@@ -146,6 +158,7 @@ DEPENDENCIES:
   - AliyunOSSiOS
   - BaiduMapKit
   - BMKLocationKit
+  - BRPickerView
   - CHIPageControl
   - ESTabBarController-swift
   - FMDB
@@ -194,6 +207,7 @@ SPEC REPOS:
     - AliyunOSSiOS
     - BaiduMapKit
     - BMKLocationKit
+    - BRPickerView
     - CHIPageControl
     - Differentiator
     - ESTabBarController-swift
@@ -268,6 +282,7 @@ SPEC CHECKSUMS:
   AliyunOSSiOS: 8db92936545593b9e5c66d680ef2ac0738946651
   BaiduMapKit: e21e4c72533f263aa3c73e3b0ea13b37e7038f62
   BMKLocationKit: fd3d6b4a9a3a1a2763819f56b780bda5fc5b8726
+  BRPickerView: 9cc11880ac79c4872d081ccb88f306224c1501d7
   CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
@@ -321,6 +336,6 @@ SPEC CHECKSUMS:
   YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 9d6bddd242706e09829052eedff85d62f8e42adf
+PODFILE CHECKSUM: 1e6bee34f42cf23acc9dc79a86d346c8b601978c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

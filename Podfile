@@ -51,4 +51,5 @@ target 'MySocialApp' do
   pod 'Schedule', '~> 2.0'
   pod "Pastel"
   pod 'lottie-ios'
+  pod 'BRPickerView'
 end

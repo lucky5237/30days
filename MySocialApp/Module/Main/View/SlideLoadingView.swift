@@ -25,6 +25,6 @@ class SlideLoadingView: UIView {
         animeView = LottieView()
         
         let starAnimation = Animation.named("search")
-        animeView.animate(<#T##animations: [MotionAnimation]##[MotionAnimation]#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+//        animeView.animate(<#T##animations: [MotionAnimation]##[MotionAnimation]#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 }

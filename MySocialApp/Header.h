@@ -18,6 +18,7 @@
 #import "JCAddMapViewController.h"
 #import "Reachability.h"
 #import "KILabel.h"
+#import "BRPickerView.h"
 #import "CRBoxInputView.h"
 #import "DLSlideView.h"
 #import "DLTabedSlideView.h"

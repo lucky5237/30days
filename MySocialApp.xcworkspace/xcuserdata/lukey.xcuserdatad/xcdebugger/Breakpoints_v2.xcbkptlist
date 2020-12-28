@@ -35,8 +35,8 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "addImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -51,8 +51,8 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "addImage()"
             landmarkType = "7">
          </BreakpointContent>

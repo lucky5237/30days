@@ -121,7 +121,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 33 files.
+  /// This `R.file` struct is generated, and contains static references to 34 files.
   struct file {
     /// Resource file `IMUIAssets.bundle`.
     static let imuiAssetsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "IMUIAssets", pathExtension: "bundle")
@@ -189,6 +189,8 @@ struct R: Rswift.Validatable {
     static let outgoing_voice_32xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "outgoing_voice_3@2x", pathExtension: "png")
     /// Resource file `outgoing_voice_3@3x.png`.
     static let outgoing_voice_33xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "outgoing_voice_3@3x", pathExtension: "png")
+    /// Resource file `search.json`.
+    static let searchJson = Rswift.FileResource(bundle: R.hostingBundle, name: "search", pathExtension: "json")
 
     /// `bundle.url(forResource: "IMUIAssets", withExtension: "bundle")`
     static func imuiAssetsBundle(_: Void = ()) -> Foundation.URL? {
@@ -385,6 +387,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "outgoing_voice_3@3x", withExtension: "png")`
     static func outgoing_voice_33xPng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.outgoing_voice_33xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "search", withExtension: "json")`
+    static func searchJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.searchJson
       return fileResource.bundle.url(forResource: fileResource)
     }
 

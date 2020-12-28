@@ -8,16 +8,20 @@
 
 import Foundation
 import Material
-class LoginUserInfoController: BaseViewController {
+import BRPickerView
+
+class LoginUserInfoController: BaseViewController,UITextFieldDelegate {
     
     var avatarImgView:BaseImageView!
     var nameTextfield:BaseTextField!
     var introTextfield:BaseTextField!
+    var ageTextfield:BaseTextField!
     var loginBtn:BaseButton!
     var stepView:StepView!
     var scrollView:UIScrollView!
     var addIconImgView:UIImageView!
     var hintLabel:UILabel!
+    var imageUrl:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,7 @@ class LoginUserInfoController: BaseViewController {
         
         avatarImgView = BaseImageView(showShadow: true, cornerRadius: 50).then{
             $0.backgroundColor = .white
+            $0.isUserInteractionEnabled = true
         }
         
         hintLabel = UILabel().then{
@@ -52,12 +57,19 @@ class LoginUserInfoController: BaseViewController {
 
         introTextfield = BaseTextField(placeholder:"一句话介绍自己")
         
+        ageTextfield = BaseTextField(placeholder:"选择您的出生日期").then{
+            $0.delegate = self
+        }
         
-        stepView = StepView(stepNum: 3, currentStep: 2)
+        
+        
+        stepView = StepView(stepNum: 2, currentStep: 2)
         
         loginBtn = BaseButton(title: "完成注册").then{
             $0.isEnabled = false
-
+            $0.addClickCallback {_ in 
+                self.login();
+            }
         }
     
         nameTextfield.rx.text.orEmpty.subscribe(onNext: { [self] text in
@@ -74,8 +86,10 @@ class LoginUserInfoController: BaseViewController {
             }
         })
         
+    
+        
         self.view.addSubview(scrollView)
-        scrollView.addSubviews([avatarImgView,hintLabel,nameTextfield,introTextfield])
+        scrollView.addSubviews([avatarImgView,hintLabel,nameTextfield,introTextfield,ageTextfield])
         avatarImgView.addSubview(addIconImgView)
         self.view.addSubviews([stepView,loginBtn])
         
@@ -113,6 +127,14 @@ class LoginUserInfoController: BaseViewController {
             $0.width.equalTo(kScreenWidth - 48)
         }
         
+        ageTextfield.snp.makeConstraints{
+            $0.top.equalTo(introTextfield.snp_bottomMargin).offset(32)
+            $0.left.equalTo(24)
+            $0.height.equalTo(56)
+            $0.width.equalTo(kScreenWidth - 48)
+        }
+        
+        
         loginBtn.snp.makeConstraints {
             $0.bottom.equalTo(-(kBottomSafeHeight + 16))
             $0.height.equalTo(56)
@@ -134,7 +156,25 @@ class LoginUserInfoController: BaseViewController {
         
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        showBirthDaySelector()
+        return false
+    }
     
+    func showBirthDaySelector() {
+        let datePickerView = BRDatePickerView(pickerMode: .YMD)
+        datePickerView.title = "请选择您的出生日期"
+        datePickerView.maxDate = Calendar.current.date(byAdding: .year, value: -18, to: Date())
+        datePickerView.minDate = Calendar.current.date(byAdding: .year, value: -99, to: Date())
+        datePickerView.selectValue = self.ageTextfield.text
+        datePickerView.resultBlock = {(selectDate,selectValue) in
+            if let selectValue = selectValue{
+                self.ageTextfield.text = selectValue
+            }
+            
+        }
+        datePickerView.show()
+    }
     
     @objc func addImage(){
         self.launchPhotoPicker { (items, cancelled) in
@@ -142,8 +182,15 @@ class LoginUserInfoController: BaseViewController {
                 if let photo = items.singlePhoto {
                     self.avatarImgView.image = photo.image
                     self.addIconImgView.isHidden = true
+                    
+                    //上传照片
                 }
             }
         }
+    }
+    
+    
+    func login() {
+        
     }
 }

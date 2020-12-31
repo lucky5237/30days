@@ -52,4 +52,5 @@ target 'MySocialApp' do
   pod "Pastel"
   pod 'lottie-ios'
   pod 'BRPickerView'
+  pod 'OverlayController', '~> 1.0.1'
 end

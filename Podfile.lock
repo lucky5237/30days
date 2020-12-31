@@ -81,6 +81,7 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - OverlayController (1.0.1)
   - Parchment (2.4.0)
   - Pastel (0.6.0)
   - pop (1.0.12)
@@ -175,6 +176,7 @@ DEPENDENCIES:
   - MJRefresh
   - mob_smssdk
   - Moya/RxSwift
+  - OverlayController (~> 1.0.1)
   - Parchment
   - Pastel
   - PryntTrimmerView (from `https://github.com/HHK1/PryntTrimmerView.git`)
@@ -228,6 +230,7 @@ SPEC REPOS:
     - MOBFoundation
     - Motion
     - Moya
+    - OverlayController
     - Parchment
     - Pastel
     - pop
@@ -303,6 +306,7 @@ SPEC CHECKSUMS:
   MOBFoundation: 606bc4c10ff4c6ac573c09f5081a39c75316bc7b
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  OverlayController: 973edcedc58d18b43453fff0604166b0139330a3
   Parchment: 002785473861582385db5c6725165353c500198e
   Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
@@ -336,6 +340,6 @@ SPEC CHECKSUMS:
   YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 1e6bee34f42cf23acc9dc79a86d346c8b601978c
+PODFILE CHECKSUM: 93e87bef2c0ec6514bd6d0846968bd57143b49d6
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.1

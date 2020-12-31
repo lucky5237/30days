@@ -12,6 +12,7 @@ import BRPickerView
 
 class LoginUserInfoController: BaseViewController,UITextFieldDelegate {
     
+    var gender:Int! //0-male 1-female
     var avatarImgView:BaseImageView!
     var nameTextfield:BaseTextField!
     var introTextfield:BaseTextField!

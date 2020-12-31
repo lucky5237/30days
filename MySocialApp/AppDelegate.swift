@@ -163,8 +163,7 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
         if kIsLogin{
             enterMainVC()
         }else{
-//            enterLoginVC()
-            enterMainVC()
+            enterLoginVC()
         }
     }
     
@@ -178,7 +177,7 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
     //进入登录页
     func enterLoginVC(){
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController.init(rootViewController:LoginViewController())
+        window?.rootViewController = UINavigationController.init(rootViewController:LoginSelectGenderController())
         window?.makeKeyAndVisible()
     }
     

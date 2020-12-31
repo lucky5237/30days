@@ -35,9 +35,9 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "addImage()"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "initSubView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,9 +51,9 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "addImage()"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "initSubView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -69,6 +69,86 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
+            landmarkName = "setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FF6C919-7695-4A2B-AB15-CDCB801572F8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Module/Login/LoginSelectGenderController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "initSubView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3FF6C919-7695-4A2B-AB15-CDCB801572F8 - eb72867c29426c0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIButton) -&gt; () in closure #5 (MySocialApp.BaseButton) -&gt; () in MySocialApp.LoginSelectGenderController.initSubView() -&gt; ()"
+                  moduleName = "MySocialApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukey/Documents/develop/lukey/30days/MySocialApp/Module/Login/LoginSelectGenderController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "3FF6C919-7695-4A2B-AB15-CDCB801572F8 - 5f2c649ea940a0a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIButton) -&gt; () in closure #1 (__C.UIButton) -&gt; () in closure #5 (MySocialApp.BaseButton) -&gt; () in MySocialApp.LoginSelectGenderController.initSubView() -&gt; ()"
+                  moduleName = "MySocialApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukey/Documents/develop/lukey/30days/MySocialApp/Module/Login/LoginSelectGenderController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F904D63-BFA9-4D7B-A52A-E22CDA3F807A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Vender/BaseAlertView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "show(title:content:confirmTitle:confirmClickBlock:cancelTitle:cancelClickBlock:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A02546E4-4FFE-4541-8180-5555E0D1EBAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Vender/BaseAlertView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>

@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import SwiftEntryKit
+import OverlayController
 
 class BaseAlertView: UIView {
     
-    lazy var subLayer: CALayer = {
-        let border = CALayer()
-        border.cornerRadius = 16
-        border.masksToBounds = true
-        return border
-    }()
+    var title:String?
+    var content:String!
+    var cancelBtnTitle:String?
+    var confirmBtnTitle:String!
+    var confirmClickBlock:((_ sender: UIButton) -> ())?
+    var cancelClickBlock:((_ sender: UIButton) -> ())?
     
+
     lazy var titleLabel:UILabel = {
         let title = UILabel()
         title.textColor = kMainTextColor
@@ -33,32 +36,42 @@ class BaseAlertView: UIView {
         return content
     }()
     
-    lazy var confirmBtn:BaseButton = {
-        let button = BaseButton()
+    lazy var confirmBtn:UIButton = {
+        let button = UIButton()
+        button.backgroundColor = kThemeColor
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = kFontSize(14)
+        button.layer.cornerRadius = 18
+        button.layer.masksToBounds = true
         return button
     }()
     
-    lazy var cancelBtn:BaseButton = {
-        let button = BaseButton()
+    lazy var cancelBtn:UIButton = {
+        let button = UIButton()
         button.backgroundColor = kHexColor(hex: "#EDEDED")!
         button.setTitleColor(kMainTextColor, for: .normal)
+        button.titleLabel?.font = kFontSize(14)
+        button.layer.cornerRadius = 18
+        button.layer.masksToBounds = true
         return button
     }()
     
+    var popVC:OverlayController!
     
-    public init(title:String? = "提示", content:String, confirmTitle:String? = "确定", cancelTitle:String? = "取消") {
+    
+    public init(title:String? = nil, content:String!, confirmTitle:String! = "确定",confirmClickBlock:((_ sender: UIButton) -> ())? = nil, cancelTitle:String = "取消",cancelClickBlock:((_ sender: UIButton) -> ())? = nil) {
         super.init(frame: .zero)
         
+        self.title = title
+        self.content = content
+        self.confirmBtnTitle = confirmTitle
+        self.cancelBtnTitle = cancelTitle
+        self.confirmClickBlock = confirmClickBlock
+        self.cancelClickBlock = cancelClickBlock
         setup()
         
-        self.titleLabel.text = title
-        self.contentLabel.text = content
-        self.confirmBtn.setTitle(confirmTitle, for: .normal)
-        self.cancelBtn.setTitle(cancelTitle, for: .normal)
-        
-        
     }
-    
+
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -70,39 +83,125 @@ class BaseAlertView: UIView {
     }
     
     
-    func setup() {
+    private func setup() {
         self.backgroundColor = .white
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 12
         
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.contentLabel)
-        self.addSubview(self.cancelBtn)
-        self.addSubview(self.confirmBtn)
+        var titleHeight:CGFloat = 0
         
-        titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview();
+        if let title = self.title,title.count > 0{
+            self.addSubview(self.titleLabel)
+            titleLabel.snp.makeConstraints {
+                $0.top.equalTo(24)
+                $0.left.equalTo(24)
+                $0.right.equalTo(-24)
+                $0.height.equalTo(25)
+            }
+            self.titleLabel.text = title
+            
+            self.addSubview(self.contentLabel)
+            contentLabel.snp.makeConstraints{
+                $0.top.equalTo(titleLabel.snp_bottomMargin).offset(20)
+                $0.left.equalTo(24)
+                $0.right.equalTo(-24)
+            }
+            
+            titleHeight = 49
+            
+        }else{
+            self.addSubview(self.contentLabel)
+            contentLabel.snp.makeConstraints{
+                $0.top.equalTo(24)
+                $0.left.equalTo(24)
+                $0.right.equalTo(-24)
+            }
+            titleHeight = 24
         }
         
         
-        contentLabel.snp.makeConstraints{
-            $0.top.equalToSuperview();
+        
+        if let cancelBtnTitle = self.cancelBtnTitle,cancelBtnTitle.count > 0 {
+            
+            self.addSubview(self.cancelBtn)
+            self.addSubview(self.confirmBtn)
+            
+            cancelBtn.snp.makeConstraints{
+                $0.left.equalTo(24);
+                $0.height.equalTo(36)
+                $0.width.equalTo((kScreenWidth - 132) / 2)
+                $0.top.equalTo(contentLabel.snp.bottom).offset(30)
+            }
+            
+            confirmBtn.snp.makeConstraints{
+                $0.right.equalTo(-24);
+                $0.height.equalTo(36)
+                $0.width.equalTo((kScreenWidth - 132) / 2)
+                $0.top.equalTo(contentLabel.snp.bottom).offset(30)
+            }
+            
+            self.cancelBtn.setTitle(cancelBtnTitle, for: .normal)
+        
+        }else{
+            self.addSubview(self.confirmBtn)
+            confirmBtn.snp.makeConstraints{
+                $0.right.equalTo(-24);
+                $0.height.equalTo(36)
+                $0.left.equalTo(24)
+                $0.top.equalTo(contentLabel.snp.bottom).offset(30)
+            }
         }
         
-        cancelBtn.snp.makeConstraints{
-            $0.top.equalToSuperview();
+        self.confirmBtn.setTitle(confirmBtnTitle, for: .normal)
+        self.contentLabel.text = content
+        
+        self.confirmBtn.addClickCallback { sender in
+            if let confirmClickBlock =  self.confirmClickBlock{
+                confirmClickBlock(sender)
+            }
+            self.dismiss()
         }
         
-        confirmBtn.snp.makeConstraints{
-            $0.top.equalToSuperview();
+        self.cancelBtn.addClickCallback { sender in
+            if let cancelClickBlock =  self.cancelClickBlock{
+                cancelClickBlock(sender)
+            }
+            self.dismiss()
         }
         
         
-        // shadowCode
-        self.layer.shadowColor = kHexColor(hex: "#A6ABBD")!.cgColor
-        self.layer.shadowOffset = CGSize(width: 5, height: 5)
-        self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 10
+        let contentHeight = self.content.height(withConstrainedWidth: kScreenWidth - 124, font: kFontSize(14))
         
-        self.layer.addSublayer(subLayer)
+        self.frame = .init(origin: .zero, size: .init(width: kScreenWidth - 76, height: titleHeight + contentHeight + 90))
+    }
+    
+    
+    class func show(title:String = "", content:String!, confirmTitle:String! = "确定",confirmClickBlock:((_ sender: UIButton) -> ())!, cancelTitle:String = "取消",cancelClickBlock:((_ sender: UIButton) -> ())? = nil){
+        
+        let alertView = BaseAlertView.init(title: title, content:content, confirmTitle: confirmTitle, confirmClickBlock: confirmClickBlock, cancelTitle: cancelTitle, cancelClickBlock: cancelClickBlock)
+        
+        alertView.present()
+
+    }
+    
+    private func present()  {
+        if popVC == nil || !popVC.isPresenting {
+            popVC = OverlayController(view: self)
+            popVC.layoutPosition = .center
+            popVC.presentationStyle = .fade
+            popVC.present()
+        }
         
     }
+    
+    
+    private func dismiss() {
+        if popVC.isPresenting {
+            popVC.dissmiss()
+        }
+    }
+    
+    
+    
+    
 }

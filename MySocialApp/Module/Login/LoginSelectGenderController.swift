@@ -92,8 +92,13 @@ class LoginSelectGenderController :UIViewController{
         loginBtn = BaseButton(title: "最后一步，完善资料").then{
             $0.isEnabled = false
             $0.addClickCallback { sender in
-                let vc = LoginUserInfoController()
-                self.navigationController?.pushViewController(vc)
+                
+                BaseAlertView.show(title: "", content: "确认性别后将无法更改，请谨慎选择", confirmTitle: "确认", confirmClickBlock: { sender in
+                    let vc = LoginUserInfoController()
+                    vc.gender = self.maleBtn.isSelected ?  0 : 1
+                    self.navigationController?.pushViewController(vc)
+                }, cancelTitle: "我再想想", cancelClickBlock: nil)
+                
             }
         }
         

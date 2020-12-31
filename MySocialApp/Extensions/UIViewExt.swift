@@ -10,9 +10,10 @@ import UIKit
 import SVProgressHUD
 import RxSwift
 import SKPhotoBrowser
-import YPImagePicker
+import ZLPhotoBrowser
 import Kingfisher
 import SwiftEntryKit
+import Photos
 
 extension UIView {
     func showLoading(){
@@ -68,16 +69,18 @@ extension UIViewController{
         self.present(broswer, animated: true, completion: nil)
     }
     
-    func launchPhotoPicker(_ completion:@escaping ([YPMediaItem],Bool)->Void){
-        var config = YPImagePickerConfiguration()
-        config.albumName = "Social App"
-        config.startOnScreen = .library
-        let picker = YPImagePicker(configuration: config)
-        picker.didFinishPicking { item, isFinished in
-            completion(item,isFinished)
-            picker.dismiss(animated: true, completion: nil)
+    func launchPhotoPicker(_ completion:@escaping ([UIImage], [PHAsset], Bool) -> Void){
+        
+        let ps = ZLPhotoPreviewSheet()
+        
+        ZLPhotoConfiguration.default().allowSelectGif = false
+        ZLPhotoConfiguration.default().allowSelectVideo = false
+        ZLPhotoConfiguration.default().allowSelectLivePhoto = false
+        
+        ps.selectImageBlock = {(images, assets, isOriginal) in
+            completion(images,assets,isOriginal)
         }
-        present(picker, animated: true, completion: nil)
+        ps.showPhotoLibrary(sender: self)
     }
 
     

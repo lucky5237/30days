@@ -85,7 +85,6 @@ PODS:
   - Parchment (2.4.0)
   - Pastel (0.6.0)
   - pop (1.0.12)
-  - PryntTrimmerView (4.0.2)
   - QuickLayout (3.0.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
@@ -113,7 +112,6 @@ PODS:
   - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
   - Spring (1.0.6)
-  - SteviaLayout (4.7.3)
   - SVProgressHUD (2.2.5)
   - SwiftDate (6.2.0)
   - SwiftEntryKit (1.2.6):
@@ -151,9 +149,9 @@ PODS:
   - UMCCommon (7.1.3)
   - YHPhotoKit (0.2.1)
   - YHPopupView (0.3.0)
-  - YPImagePicker (4.4.0):
-    - PryntTrimmerView (~> 4.0.2)
-    - SteviaLayout (~> 4.7.3)
+  - ZLPhotoBrowser (4.0.5):
+    - ZLPhotoBrowser/Core (= 4.0.5)
+  - ZLPhotoBrowser/Core (4.0.5)
 
 DEPENDENCIES:
   - AliyunOSSiOS
@@ -179,7 +177,6 @@ DEPENDENCIES:
   - OverlayController (~> 1.0.1)
   - Parchment
   - Pastel
-  - PryntTrimmerView (from `https://github.com/HHK1/PryntTrimmerView.git`)
   - R.swift
   - Reusable
   - RTRootNavigationController
@@ -201,7 +198,7 @@ DEPENDENCIES:
   - UMCCommon
   - YHPhotoKit
   - YHPopupView
-  - YPImagePicker (from `https://github.com/Yummypets/YPImagePicker.git`)
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
@@ -247,7 +244,6 @@ SPEC REPOS:
     - SkeletonView
     - SKPhotoBrowser
     - SnapKit
-    - SteviaLayout
     - SVProgressHUD
     - SwiftDate
     - SwiftEntryKit
@@ -260,25 +256,16 @@ SPEC REPOS:
     - UMCCommon
     - YHPhotoKit
     - YHPopupView
+    - ZLPhotoBrowser
 
 EXTERNAL SOURCES:
-  PryntTrimmerView:
-    :git: https://github.com/HHK1/PryntTrimmerView.git
   Spring:
     :git: https://github.com/MengTo/Spring.git
-  YPImagePicker:
-    :git: https://github.com/Yummypets/YPImagePicker.git
 
 CHECKOUT OPTIONS:
-  PryntTrimmerView:
-    :commit: 4a9739f251fbf88f394192fdbf3195d55d3811b5
-    :git: https://github.com/HHK1/PryntTrimmerView.git
   Spring:
     :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
     :git: https://github.com/MengTo/Spring.git
-  YPImagePicker:
-    :commit: 27fcc3d955b5782c8645ad743f0438ea27a5a0fe
-    :git: https://github.com/Yummypets/YPImagePicker.git
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -310,7 +297,6 @@ SPEC CHECKSUMS:
   Parchment: 002785473861582385db5c6725165353c500198e
   Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
@@ -325,7 +311,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
-  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
@@ -338,8 +323,8 @@ SPEC CHECKSUMS:
   UMCCommon: 0cb2629b93884531621100ed66ff2bca8b181f1f
   YHPhotoKit: e88368af1fca0a110d41b88417088f7e49876981
   YHPopupView: 96d9c05c79a2a17cf69c3def09e5305cfae9e8e8
-  YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
+  ZLPhotoBrowser: cddbe3ea5dfb2ff0ae11bc77583cc077073f9e50
 
-PODFILE CHECKSUM: 93e87bef2c0ec6514bd6d0846968bd57143b49d6
+PODFILE CHECKSUM: 45edc0918a7c755a1e194e0caa2f18d7cb14137e
 
 COCOAPODS: 1.9.1

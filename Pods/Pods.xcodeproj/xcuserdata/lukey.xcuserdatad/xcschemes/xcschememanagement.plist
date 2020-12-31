@@ -149,11 +149,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PryntTrimmerView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>QuickLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -229,11 +224,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SteviaLayout.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftDate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -289,7 +279,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YPImagePicker.xcscheme</key>
+		<key>ZLPhotoBrowser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -178,16 +178,16 @@ class LoginUserInfoController: BaseViewController,UITextFieldDelegate {
     }
     
     @objc func addImage(){
-        self.launchPhotoPicker { (items, cancelled) in
-            if !cancelled && items.count > 0{
-                if let photo = items.singlePhoto {
-                    self.avatarImgView.image = photo.image
-                    self.addIconImgView.isHidden = true
-                    
-                    //上传照片
-                }
+        
+        self.launchPhotoPicker { (images, assets, isOriginal) in
+            if let photo = images.first {
+                self.avatarImgView.image = photo
+                self.addIconImgView.isHidden = true
+                
+                //上传照片
             }
         }
+        
     }
     
     

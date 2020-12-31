@@ -8,7 +8,6 @@
 
 import UIKit
 import Then
-import YPImagePicker
 import SwiftyUserDefaults
 
 class PhotoViewController: BaseViewController {
@@ -57,36 +56,15 @@ class PhotoViewController: BaseViewController {
         
     }
     
+    
     func addPhoto() {
         
-        var config = YPImagePickerConfiguration()
-        config.albumName = "Social App"
-        config.showsCrop = .rectangle(ratio: 1)
-        config.showsPhotoFilters = false
-        config.screens = [.photo,.library,.video]
-        config.startOnScreen = .photo
-        
-        let picker = YPImagePicker(configuration: config)
-        
-        picker.didFinishPicking { [unowned picker] items,_ in
-            if let photo = items.singlePhoto {
-                print(photo.fromCamera) // Image source (camera or library)
-                print(photo.image) // Final image selected by the user
-                print(photo.originalImage) // original image selected by the user, unfiltered
-                print(photo.modifiedImage) // Transformed image, can be nil
-                print(photo.exifMeta) // Print exif meta data of original image.
-                self.imageView.image = photo.image
-            }
-            
-            if let video = items.singleVideo {
-                print(video.fromCamera)
-                print(video.thumbnail)
-                print(video.url)
-            }
-            picker.dismiss(animated: true, completion: nil)
+        self.launchPhotoPicker { (images, assets, isOriginal) in
+            self.imageView.image = images.first
         }
         
-        present(picker, animated: true, completion: nil)
     }
+        
+       
 
 }

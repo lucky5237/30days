@@ -32,6 +32,8 @@ class UserModel: HandyJSON{
     var locationDistrict:String?
     var gender:Gender?
     var age:Int?
+    var height: Int?
+    var weight: Int?
     var constellation:String?
     var introduction:String?
     var genderStr:String{
@@ -64,7 +66,10 @@ class UserModel: HandyJSON{
             self.constellation <-- "userInfo.constellation"
         mapper <<<
             self.introduction <-- "userInfo.introduction"
-        
+        mapper <<<
+            self.height <-- "userInfo.height"
+        mapper <<<
+            self.weight <-- "userInfo.weight"
     }
     
     func saveToLocal(){

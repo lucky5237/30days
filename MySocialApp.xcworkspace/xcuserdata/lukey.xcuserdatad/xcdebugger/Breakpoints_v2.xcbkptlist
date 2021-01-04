@@ -35,8 +35,8 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "initSubView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -51,8 +51,8 @@
             filePath = "MySocialApp/Module/Login/LoginUserInfoController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "initSubView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -83,8 +83,8 @@
             filePath = "MySocialApp/Module/Login/LoginSelectGenderController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "initSubView()"
             landmarkType = "7">
             <Locations>
@@ -150,6 +150,22 @@
             startingLineNumber = "93"
             endingLineNumber = "93"
             landmarkName = "setup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32807EA-E3E8-4B5A-BC8A-CEFCCD8BFABC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySocialApp/Module/User/UserHomePageController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

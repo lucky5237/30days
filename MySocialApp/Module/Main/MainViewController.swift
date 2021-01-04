@@ -17,6 +17,7 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
     var dislikeBtn:BaseIconButton!
     var chatBtn:BaseIconButton!
     var lastDirection:SwipeResultDirection?
+    var searchView:SlideLoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +29,39 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
     }
     
     override func initData() {
-        dataArray.removeAll()
-        self.showLoading()
-        for i in 1..<10{
-            let user = UserModel()
-            user.userName = "name \(i)"
-            user.userId = i
-            user.userAvatar = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2631334549,246605465&fm=26&gp=0.jpg"
-            dataArray.append(user)
-        }
+        self.searchView.isHidden = false
+        self.searchView.startAnime()
         
-        slideView.reloadData()
-        self.hideLoading()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
+            self?.dataArray.removeAll()
+            self?.showLoading()
+            for i in 1..<10{
+                let user = UserModel()
+                user.userName = "name \(i)"
+                user.userId = i
+                user.age = i
+                user.height = 170 + i
+                user.userAvatar = "https://cdn.faloapp.com/default/avatar/woman/\(i).png"
+                user.photos = "https://cdn.faloapp.com/default/avatar/woman/\(i).png,https://cdn.faloapp.com/default/avatar/woman/\(i+1).png,https://cdn.faloapp.com/default/avatar/woman/\(i+2).png"
+                self?.dataArray.append(user)
+            }
+            
+            self?.slideView.reloadData()
+            self?.hideLoading()
+            self?.searchView.stopAnime()
+            self?.searchView.isHidden = true
+        }
+
     }
     
     
+    
+    
     func setup(){
+        
         slideView = KolodaView(frame: CGRect(x: 24, y: kTopHeight + 24, width: kScreenWidth - 48, height: kSafeAreaHeight -  48 - kScaleHeight(117)))
+        slideView.reverseAnimationDuration = 0.5
         slideView.backgroundCardsTopMargin = 0
         slideView.countOfVisibleCards = 2
         slideView.delegate = self
@@ -93,6 +110,11 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
         
         self.view.bringSubviewToFront(slideView)
         
+        self.searchView = SlideLoadingView()
+        self.view.addSubview(searchView)
+        searchView.snp.makeConstraints{
+            $0.edges.equalTo(slideView)
+        }
     }
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
@@ -112,8 +134,10 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
         let user = self.dataArray[index]
         switch direction {
         case .left:
+            self.lastDirection = .left
             print("左滑了用户" + (user.userName ?? ""))
         case .right:
+            self.lastDirection = .right
             print("右滑了用户" + (user.userName ?? ""))
         default:
             break
@@ -124,24 +148,19 @@ class MainViewController: BaseViewController,KolodaViewDelegate,KolodaViewDataSo
         koloda.resetCurrentCardIndex()
         self.initData()
     }
+
     
     func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
         
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-//        let seed = Int.random(in: 0..<2)
-//        koloda.swipe(seed == 0 ? .left : .right, force: true)
+        let user:UserModel = dataArray[index]
+        let userVC = UserHomePageController()
+        userVC.user = user
+        self.navigationController?.pushViewController(userVC)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
     @objc func redrawSwipe(){
         if let lastDirection = self.lastDirection {

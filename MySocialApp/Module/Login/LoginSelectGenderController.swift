@@ -21,7 +21,6 @@ class LoginSelectGenderController :UIViewController{
         initData()
         
     }
-
     
     func initData() {
         
@@ -86,7 +85,6 @@ class LoginSelectGenderController :UIViewController{
             }
         }
        
-        
         stepView = StepView(stepNum: 2)
         
         loginBtn = BaseButton(title: "最后一步，完善资料").then{

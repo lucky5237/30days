@@ -19,19 +19,16 @@ class RootViewController: ESTabBarController{
     
     func configViewControllers(){
 
-        let firstVC = RTContainerNavigationController(rootViewController: ViewController())
-        let secondVC = RTContainerNavigationController(rootViewController: MainViewController())
-        let thirdVC = RTContainerNavigationController(rootViewController: PhotoViewController())
-        let fourthVC = RTContainerNavigationController(rootViewController: MessageViewController())
-        let fifthVC = RTContainerNavigationController(rootViewController: MineController())
+        let mainVC = RTContainerNavigationController(rootViewController: MainViewController())
+        let msgVC = RTContainerNavigationController(rootViewController: MessageViewController())
+        let myVC = RTContainerNavigationController(rootViewController: MineController())
         
-        firstVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "Home", image:R.image.home(), selectedImage: R.image.home_1())
-        secondVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "Find", image: R.image.find(), selectedImage: R.image.find_1())
-        thirdVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "Photo", image: R.image.message(), selectedImage: R.image.message_1())
-        fourthVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "Favor", image:R.image.favor(), selectedImage: R.image.favor_1())
-        fifthVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "Me", image:R.image.me(), selectedImage:R.image.me_1())
+        mainVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "匹配", image:R.image.home(), selectedImage: R.image.home_1())
+        msgVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "消息", image: R.image.message(), selectedImage: R.image.message_1())
+        myVC.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "我的", image: R.image.me(), selectedImage: R.image.me_1())
         
-        self.viewControllers = [firstVC,secondVC,thirdVC,fourthVC,fifthVC]
+        
+        self.viewControllers = [mainVC,msgVC,myVC]
         self.tabBar.backgroundColor = .white
     }
 

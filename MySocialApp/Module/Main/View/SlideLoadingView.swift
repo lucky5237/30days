@@ -10,7 +10,8 @@ import Foundation
 import Lottie
 
 class SlideLoadingView: UIView {
-    var animeView:LottieView!
+    var animeView:AnimationView!
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -22,9 +23,30 @@ class SlideLoadingView: UIView {
     }
     
     func setup(){
-        animeView = LottieView()
         
-        let starAnimation = Animation.named("search")
-//        animeView.animate(<#T##animations: [MotionAnimation]##[MotionAnimation]#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.backgroundColor = .white
+        
+        animeView = AnimationView(animation: Animation.named("search"))
+        
+        self.addSubview(animeView)
+        animeView.snp.makeConstraints {
+//            $0.width.height.equalTo(200)
+//            $0.top.equalTo(30)
+//            $0.centerX.equalToSuperview()
+            $0.edges.equalToSuperview()
+        }
+        
     }
+    
+    public func startAnime(){
+        if animeView.isAnimationPlaying {
+            animeView.stop()
+        }
+        animeView.play()
+    }
+    
+    public func stopAnime(){
+        animeView.stop()
+    }
+    
 }

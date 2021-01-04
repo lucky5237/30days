@@ -163,7 +163,8 @@ extension AppDelegate:JMessageDelegate,BMKLocationAuthDelegate,BMKLocationManage
         if kIsLogin{
             enterMainVC()
         }else{
-            enterLoginVC()
+//            enterLoginVC()
+            enterMainVC()
         }
     }
     

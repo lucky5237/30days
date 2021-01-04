@@ -94,8 +94,7 @@ class LoginUserInfoController: BaseViewController,UITextFieldDelegate {
         avatarImgView.addSubview(addIconImgView)
         self.view.addSubviews([stepView,loginBtn])
         
-        
-        
+    
         scrollView.snp.makeConstraints{
             $0.top.equalTo(kTopHeight)
             $0.left.equalTo(0)

@@ -150,6 +150,9 @@
 		22869C6C2599D42800640D7D /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 22869C6B2599D42800640D7D /* search.json */; };
 		2293DD7525217F7500617C80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293DD7425217F7500617C80 /* StoreKit.framework */; };
 		229D18BA259D9ECF00239DC8 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D18B9259D9ECE00239DC8 /* String+Height.swift */; };
+		229D197525A2BD6300239DC8 /* UserHomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D197425A2BD6300239DC8 /* UserHomePageController.swift */; };
+		229D197825A2F3C400239DC8 /* HomepageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D197725A2F3C300239DC8 /* HomepageHeaderView.swift */; };
+		229D197C25A2F7AA00239DC8 /* HomepageItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D197B25A2F7AA00239DC8 /* HomepageItemCell.swift */; };
 		22A6A94025943CF400B44F58 /* BaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A93F25943CF400B44F58 /* BaseAlertView.swift */; };
 		22A6A94325946D1400B44F58 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6A94225946D1400B44F58 /* BaseImageView.swift */; };
 		22B2CEB825217BF6001BD10E /* login_01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B2CE8925217BF6001BD10E /* login_01@3x.png */; };
@@ -541,6 +544,9 @@
 		2293DD7425217F7500617C80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2293DD7725217F7D00617C80 /* MySocialAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialAppDebug.entitlements; sourceTree = "<group>"; };
 		229D18B9259D9ECE00239DC8 /* String+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
+		229D197425A2BD6300239DC8 /* UserHomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomePageController.swift; sourceTree = "<group>"; };
+		229D197725A2F3C300239DC8 /* HomepageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageHeaderView.swift; sourceTree = "<group>"; };
+		229D197B25A2F7AA00239DC8 /* HomepageItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageItemCell.swift; sourceTree = "<group>"; };
 		22A6A93F25943CF400B44F58 /* BaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAlertView.swift; sourceTree = "<group>"; };
 		22A6A94225946D1400B44F58 /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
 		22B2CE8925217BF6001BD10E /* login_01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_01@3x.png"; sourceTree = "<group>"; };
@@ -630,6 +636,7 @@
 		0023D48122ADF5AC00C1355A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				229D197325A2BD2700239DC8 /* User */,
 				0032893E22C608D900F94C8C /* Message */,
 				00C5F06322C35DC6005B62E1 /* Me */,
 				00C5289922C0D034003A72C0 /* Login */,
@@ -1580,6 +1587,16 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
+		229D197325A2BD2700239DC8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				229D197425A2BD6300239DC8 /* UserHomePageController.swift */,
+				229D197725A2F3C300239DC8 /* HomepageHeaderView.swift */,
+				229D197B25A2F7AA00239DC8 /* HomepageItemCell.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		22B2CE8725217BF6001BD10E /* JMessageBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -1928,6 +1945,7 @@
 				222EB08425209D3B002603DE /* UIImageMessageListExtension.swift in Sources */,
 				22869BBA2599825300640D7D /* BaseIconButton.swift in Sources */,
 				222EB08E25209D3B002603DE /* IMUIMessageStatusViewProtocol.swift in Sources */,
+				229D197825A2F3C400239DC8 /* HomepageHeaderView.swift in Sources */,
 				007BF11722AFACF000218C40 /* UserHomepageHeaderView.swift in Sources */,
 				222EB06825209D3B002603DE /* IMUIFeatureView.swift in Sources */,
 				0023D47B22AD626100C1355A /* UIViewExt.swift in Sources */,
@@ -2003,7 +2021,9 @@
 				222EB08325209D3B002603DE /* BundleMessageListExtension.swift in Sources */,
 				222EB06725209D3B002603DE /* IMUIProgressButton.swift in Sources */,
 				222EB08F25209D3B002603DE /* IMUIMessageModelProtocol.swift in Sources */,
+				229D197C25A2F7AA00239DC8 /* HomepageItemCell.swift in Sources */,
 				0066DA3D22AA1146002D307E /* BaseTableViewController.swift in Sources */,
+				229D197525A2BD6300239DC8 /* UserHomePageController.swift in Sources */,
 				222EB06225209D3B002603DE /* IMUICameraView.swift in Sources */,
 				007BF11522AFA8B500218C40 /* UserHomepageViewController.swift in Sources */,
 				22041F44258DF4D6000F4D96 /* CRLineView.m in Sources */,

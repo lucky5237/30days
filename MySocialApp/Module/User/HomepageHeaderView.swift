@@ -11,7 +11,7 @@ import FSPagerView
 import TagListView
 
 
-class HomepageHeaderView: UIView,FSPagerViewDelegate,FSPagerViewDataSource  {
+class HomepageHeaderView: UICollectionReusableView,FSPagerViewDelegate,FSPagerViewDataSource  {
 
     var banner:FSPagerView!{
         didSet {
@@ -24,13 +24,39 @@ class HomepageHeaderView: UIView,FSPagerViewDelegate,FSPagerViewDataSource  {
     var introLabel:UILabel!
     var tagView:TagListView!
     
-    var user:UserModel?
+    var user:UserModel?{
+        didSet{
+//            self.nameLabel.text = user?.userName
+//
+//            let info = NSMutableString.init()
+//
+//            if let age = user?.age{
+//                info.append("\(age) / ")
+//            }
+//
+//            if let height = user?.height{
+//                info.append("\(height)cm / ")
+//            }
+//
+//            if let constellation = user?.constellation{
+//                info.append("\(constellation) / ")
+//            }
+//
+//            if info.hasSuffix("/ ") {
+//                info.deleteCharacters(in: .init(location: info.length - 2, length: 2))
+//            }
+//
+//            self.infoLabel.text = info as String
+            
+            self.banner.reloadData()
+        }
+    }
     
-    public init(user: UserModel){
-        super.init(frame: .zero)
-        self.user = user
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -57,19 +83,19 @@ class HomepageHeaderView: UIView,FSPagerViewDelegate,FSPagerViewDataSource  {
             $0.currentPageIndicatorTintColor = kThemeColor
         }
         
-        self.nameLabel = UILabel().then{
-            $0.textColor = kMainTextColor
-            $0.font = kMediumFontSize(24)
-        }
-        
-        self.infoLabel = UILabel().then{
-            $0.textColor = kSubTextColor
-            $0.font = kFontSize(14)
-        }
-        
+//        self.nameLabel = UILabel().then{
+//            $0.textColor = kMainTextColor
+//            $0.font = kMediumFontSize(24)
+//        }
+//
+//        self.infoLabel = UILabel().then{
+//            $0.textColor = kSubTextColor
+//            $0.font = kFontSize(14)
+//        }
+//
         self.addSubview(self.pageControl)
-        self.addSubview(self.nameLabel)
-        self.addSubview(self.infoLabel)
+//        self.addSubview(self.nameLabel)
+//        self.addSubview(self.infoLabel)
         
         self.pageControl.snp.makeConstraints {
             $0.top.equalTo(self.banner.snp.bottom).offset(0)
@@ -77,42 +103,22 @@ class HomepageHeaderView: UIView,FSPagerViewDelegate,FSPagerViewDataSource  {
             $0.height.width.equalTo(24)
         }
         
-        self.nameLabel.snp.makeConstraints {
-            $0.top.equalTo(self.banner.snp.bottom).offset(0)
-            $0.left.equalTo(24)
-            $0.right.equalTo(-24)
-            $0.height.equalTo(24)
-        }
+//        self.nameLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.banner.snp.bottom).offset(0)
+//            $0.left.equalTo(24)
+//            $0.right.equalTo(-24)
+//            $0.height.equalTo(24)
+//        }
+//        
+//        self.infoLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.nameLabel.snp.bottom).offset(2)
+//            $0.left.equalTo(24)
+//            $0.right.equalTo(-24)
+//            $0.height.equalTo(19)
+//        }
         
-        self.infoLabel.snp.makeConstraints {
-            $0.top.equalTo(self.nameLabel.snp.bottom).offset(2)
-            $0.left.equalTo(24)
-            $0.right.equalTo(-24)
-            $0.height.equalTo(19)
-        }
         
         
-        self.nameLabel.text = user?.userName
-        
-        let info = NSMutableString.init()
-        
-        if let age = user?.age{
-            info.append("\(age) / ")
-        }
-        
-        if let height = user?.height{
-            info.append("\(height)cm / ")
-        }
-        
-        if let constellation = user?.constellation{
-            info.append("\(constellation) / ")
-        }
-        
-        if info.hasSuffix("/ ") {
-            info.deleteCharacters(in: .init(location: info.length - 2, length: 2))
-        }
-        
-        self.infoLabel.text = info as String
     }
     
     func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {

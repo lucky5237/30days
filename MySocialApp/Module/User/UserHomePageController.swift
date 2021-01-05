@@ -8,67 +8,112 @@
 
 import UIKit
 
-class UserHomePageController: BaseViewController,UITableViewDelegate,UITableViewDataSource{
+class UserHomePageController: BaseViewController,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
     
     var user:UserModel!
-    var tableView:UITableView!
+    var collectionView:UICollectionView!
     var headerView:HomepageHeaderView!
+    var userInfoArray:NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        
     }
     
     override func initSubView() {
-        self.headerView = HomepageHeaderView(user: self.user)
-        self.headerView.frame = .init(origin: .zero, size: .init(width: kScreenWidth, height: kScreenWidth + 45))
         
-        self.tableView = UITableView.init(frame: .zero, style: .grouped).then{
-            $0.tableHeaderView = self.headerView
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = .init(width: (kScreenWidth - 72) / 2, height: 75)
+        flowLayout.headerReferenceSize = CGSize(width: kScreenWidth, height: kScreenWidth)
+        flowLayout.minimumLineSpacing = 16
+        flowLayout.minimumInteritemSpacing = 24
+        
+        self.collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: flowLayout).then{
+           
             if #available(iOS 11.0, *){
                 $0.contentInsetAdjustmentBehavior = .never
             }
             $0.delegate = self
             $0.dataSource = self
-            $0.register(HomepageItemCell.self, forCellReuseIdentifier: NSStringFromClass(HomepageItemCell.self))
+            $0.backgroundColor = kBackgroundColor
+//            $0.contentInset = .init(top: 0, left: 24, bottom: 0, right: 24)
+            $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
+            
+            $0.register(HomepageItemCell.self, forCellWithReuseIdentifier: NSStringFromClass(HomepageItemCell.self))
+            
+            $0.register(HomepageHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NSStringFromClass(HomepageHeaderView.self))
         }
         
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
+        self.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(kTopHeight)
             make.left.right.bottom.equalTo(0)
         }
         
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(HomepageItemCell.self), for: indexPath)
-        cell.selectionStyle = .none
-        cell.backgroundColor = .random
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
 
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(HomepageHeaderView.self), for: indexPath) as! HomepageHeaderView
+        header.user = user
+        
+        return header
+    }
     
+
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.userInfoArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(HomepageItemCell.self), for: indexPath) as! HomepageItemCell
+        let info:String = self.userInfoArray[indexPath.row] as! String
+        let array = info.split(separator: ":")
+        
+        cell.name = String(array[0])
+        cell.des = String(array[1])
+        
+        return cell
+    }
+   
+   
     override func initData() {
 //        api.request(.userInfo(userId: self.userId)) { result in
 //
 //        }
+        self.userInfoArray = NSMutableArray()
+        
+        if let age = user.age {
+            self.userInfoArray.add("年龄:\(age)岁")
+        }
+        
+        if let constellation = user.constellation {
+            self.userInfoArray.add("星座:" + constellation)
+        }
+        
+        if let height = user.height {
+            self.userInfoArray.add("身高:\(height)cm")
+        }
+        
+        if let weight = user.weight {
+            self.userInfoArray.add("体重:\(weight)kg")
+        }
+    
+        
+        if let provice = user.locationProvince, let city = user.locationCity{
+            if provice == city {
+                self.userInfoArray.add("城市:" + provice)
+            }else{
+                self.userInfoArray.add("城市:" + provice + "," + city)
+            }
+        }
         
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 24, bottom: 0, right: 24)
     }
     
     

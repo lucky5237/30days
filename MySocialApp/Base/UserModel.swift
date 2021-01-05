@@ -28,6 +28,7 @@ class UserModel: HandyJSON{
     var userName: String?
     var userId: Int!
     var userAvatar :String?
+    var locationProvince:String?
     var locationCity:String?
     var locationDistrict:String?
     var gender:Gender?
@@ -54,6 +55,8 @@ class UserModel: HandyJSON{
             self.photos <-- "userInfo.photos"
         mapper <<<
             self.userAvatar <-- "userInfo.userAvatar"
+        mapper <<<
+            self.locationProvince <-- "userInfo.locationProvince"
         mapper <<<
             self.locationCity <-- "userInfo.locationCity"
         mapper <<<
